@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 import { map, Observable, switchMap, take } from 'rxjs';
@@ -112,7 +112,8 @@ export class UserService {
   }
 
   getPatientsByName(term: string) {
-    return this.httpClient.get<PatientDto[]>(`${this.url}/patients?q=${encodeURIComponent(term)}`);
+    const params = new HttpParams().set('q', term);
+    return this.httpClient.get<PatientDto[]>(`${this.url}/patients`, { params });
   }
 
 }
