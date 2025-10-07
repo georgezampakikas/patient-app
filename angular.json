@@ -27,9 +27,20 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/images/",
+                "output": "/assets/images/"
+              }               
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.scss"
             ]
           },
@@ -38,8 +49,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1500kB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -85,7 +96,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              }             
             ],
             "styles": [
               "src/styles.scss"

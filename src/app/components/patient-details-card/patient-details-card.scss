@@ -1,0 +1,90 @@
+.patient-details-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    flex: 1 1 auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.user-name-container {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 5px;
+}
+
+.user-name {
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    font-weight: bold;
+    color: #333333;
+    opacity: 75%;
+}
+
+.lock-icon {
+    color: #333333;
+    opacity: 75%;
+    width: 8px;
+    height: 8px;
+}
+
+.user-details {
+    display: flex;
+    gap: 12px;
+}
+
+.user-details-item {
+    color: #333333;
+    opacity: 65%;
+    font-size: 14px;
+    font-family: 'SFProDisplay-Regular', sans-serif;
+}
+
+.labeled-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tags-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    max-height: 60px;
+    max-width: 300px;
+    gap: 20px;
+}
+
+.tags-header {
+    // gap: 20px;
+    align-self: flex-start;
+    
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.tag {
+  flex: 1 1 auto;      
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

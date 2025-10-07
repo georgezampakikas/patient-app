@@ -1,0 +1,24 @@
+.gi {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1 1 auto;  
+}
+
+.gi__table-wrapper {
+  flex: 1 1 auto;
+  height: 100%;
+  padding-right: 8px; 
+}
+
+.gi__table {
+  width: 100%;
+  table-layout: auto;
+  flex: 1 1 auto;
+}
+
+.gi__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

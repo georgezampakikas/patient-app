@@ -1,0 +1,33 @@
+.label {
+    color: #333333;
+    opacity: 65%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 20% 1fr;
+}
+
+.grid-item:first-child {
+    grid-column: 1;
+}
+
+.grid-item:last-child {
+    grid-column: 3;
+}
+
+.inputs {
+    border: 1px solid #333333;
+    width: 200px;
+
+}
+
+.footer-btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.button {
+    border-radius: 6px;
+}

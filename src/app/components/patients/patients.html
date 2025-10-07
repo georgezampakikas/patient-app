@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="searchbar">
+        <nz-input-group class="input-group">
+            <input 
+                id="selected-input"
+                class="input"
+                nz-input
+                [ngModel]="selectedPatient()"
+                (ngModelChange)="selectedPatient.set($event)" 
+                [nzAutocomplete]="auto"
+            />
+        </nz-input-group>
+        <nz-autocomplete #auto>
+            <div class="headers">
+                <div>Όνομα</div>
+                <div>Επώνυμο</div>
+                <div>A.M.K.A.</div>
+                <div>Κωδικός</div>
+                <div>Κατάσταση</div>
+            </div>
+            @for(patient of filteredPatients(); track patient.id) {
+                <nz-auto-option 
+                    [routerLink]="['/patient-details', patient.id]" 
+                    routerLinkActive="is-active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                >
+                    <div class="content">
+                        <div>{{ patient.patientIdentity.firstName }}</div>
+                        <div>{{ patient.patientIdentity.lastName }}</div>
+                        <div>{{ patient.patientIdentity.amka }}</div>
+                        <div>{{ patient.patientIdentity.code }}</div>
+                        <div>{{ patient.patientIdentity.status }}</div>
+                    </div>
+                </nz-auto-option>
+            }
+        </nz-autocomplete>
+    </div>
+</div>

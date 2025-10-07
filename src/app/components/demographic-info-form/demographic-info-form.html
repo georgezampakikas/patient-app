@@ -1,0 +1,160 @@
+<form class="class-form" nz-form [formGroup]="demographicInfoForm" (ngSubmit)="submitForm()">
+  <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="language">Ημερομηνία Γέννησης</nz-form-label>
+          <nz-form-control>
+            <nz-date-picker formControlName="birthDate" class="inputs"></nz-date-picker>
+         </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="birthPlace">Τόπος Γέννησης</nz-form-label>
+          <nz-form-control>
+            <nz-input-group class="input-groups">
+              <input 
+                class="inputs" 
+                nz-input 
+                id="birthPlace" 
+                name="birthPlace" 
+                type="text" 
+                formControlName="birthPlace" 
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="firstName">Φύλο</nz-form-label>
+        <nz-form-control>
+          <nz-select class="inputs" formControlName="genderId">
+            @for (gender of genders; track gender.id) {
+              <nz-option [nzLabel]="gender.name" [nzValue]="gender.id"></nz-option>
+            }
+          </nz-select>
+        </nz-form-control>
+      </div>
+
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="lastName">Οικογενειακή Κατάσταση</nz-form-label>
+        <nz-form-control>
+          <nz-select class="inputs" formControlName="maritalStatusId">
+            @for (maritalStatus of maritalStatuses; track maritalStatus.id) {
+              <nz-option [nzLabel]="maritalStatus.name" [nzValue]="maritalStatus.id"></nz-option>
+            }
+          </nz-select>
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="fatherName">Όνομα Πατρός</nz-form-label>
+          <nz-form-control>
+            <input 
+              class="inputs" 
+              nz-input 
+              id="fatherName" 
+              type="text" 
+              name="fatherName" 
+              formControlName="fatherName" 
+            />
+          </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="motherName">Όνομα Μητρός</nz-form-label>
+          <nz-form-control>
+            <input 
+              class="inputs" 
+              nz-input 
+              id="motherName" 
+              name="motherName" 
+              type="text" 
+              formControlName="motherName" 
+            />
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="language">Γλώσσα</nz-form-label>
+          <nz-form-control>
+            <nz-input-group class="input-groups">
+              <input 
+                class="inputs" 
+                nz-input 
+                id="language" 
+                name="language" 
+                type="text" 
+                formControlName="language"
+              />
+            </nz-input-group>          
+         </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="nationality">Εθνικότητα</nz-form-label>
+          <nz-form-control>
+            <nz-input-group class="input-groups">
+              <input 
+                class="inputs" 
+                nz-input 
+                id="nationality" 
+                name="nationality" 
+                type="text" 
+                formControlName="nationality" 
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="profession">Επάγγελμα</nz-form-label>
+          <nz-form-control>
+            <nz-input-group class="input-groups">
+              <input 
+                class="inputs" 
+                nz-input 
+                id="profession" 
+                type="text" 
+                name="profession"  
+                formControlName="profession" 
+              />      
+            </nz-input-group>
+          </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="education">Επίπεδο Εκπαίδευσης</nz-form-label>
+          <nz-form-control>
+            <nz-select class="inputs" formControlName="educationId">
+              @for (educationLevel of educationLevels; track educationLevel.id) {
+                <nz-option [nzLabel]="educationLevel.name" [nzValue]="educationLevel.id"></nz-option>
+              }
+            </nz-select>
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-divider></nz-divider>
+
+    <div class="footer-btns">
+        <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
+        <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
+    </div>   
+</form>

@@ -1,0 +1,30 @@
+<nz-table 
+    class="table"
+    [nzData]="patientTestResults"
+    [appNsAutoHeightTable]=""
+    nzShowPagination="false"
+    nzSize="middle"
+>
+    <thead>
+        <tr>
+            <th>IssueDate</th>
+            <th>Name</th>
+            <th>Result</th>
+            <th>Unit</th>
+            <th>NormalRange</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(patientTestResult of patientTestResults; track patientTestResult) {
+            <tr>
+                <td>{{ patientTestResult.issueDate | date: 'shortDate' }}</td>
+                <td>
+                    <a (click)="testNameResultModal(patientTestResult)">{{ patientTestResult.name }}</a>
+                </td>
+                <td>{{ patientTestResult.result }}</td>
+                <td>{{ patientTestResult.unit }}</td>
+                <td>{{ patientTestResult.normalRange }}</td>
+            </tr>
+        }
+    </tbody>
+</nz-table>

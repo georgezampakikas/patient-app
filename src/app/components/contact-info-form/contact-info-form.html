@@ -1,0 +1,86 @@
+<form nz-form [formGroup]="contactInfoForm" (ngSubmit)="submitForm()">
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="phoneType">Τηλέφωνο</nz-form-label>
+        <nz-form-control>
+            <div class="radio-container">
+                <nz-radio-group 
+                  id="phoneType" 
+                  formControlName="phoneType" 
+                  nzButtonStyle="solid"
+                  >
+                    <label class="button" nz-radio-button nzValue="home">Οικίας</label>                
+                    <label class="button" nz-radio-button nzValue="mobile">Κινητό</label>
+                    <label class="button" nz-radio-button nzValue="work">Εργασίας</label>
+                    <label class="button" nz-radio-button nzValue="other">Άλλο</label>
+                </nz-radio-group>
+
+                @if (isPhoneTypeOther) {
+                  <input
+                    class="inputs"
+                    nz-input
+                    id="phoneLabel" 
+                    type="text" 
+                    name="phoneLabel" 
+                    formControlName="phoneLabel"
+                  />
+                }
+
+                <input 
+                    class="inputs" 
+                    nz-input 
+                    id="phoneNumber" 
+                    type="text" 
+                    name="phoneNumber" 
+                    formControlName="phoneNumber" 
+                />                
+            </div>
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="address">Διεύθυνση</nz-form-label>
+        <nz-form-control>
+                <input 
+                    class="inputs" 
+                    nz-input 
+                    id="address" 
+                    type="text" 
+                    name="address" 
+                    formControlName="address" 
+                />                
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="email">Email</nz-form-label>
+        <nz-form-control>
+                <input 
+                    class="inputs" 
+                    nz-input 
+                    id="email" 
+                    type="text" 
+                    name="email" 
+                    formControlName="email" 
+                />                
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+    <nz-divider></nz-divider>
+
+    <div class="footer-btns">
+        <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
+        <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
+    </div>
+</form>

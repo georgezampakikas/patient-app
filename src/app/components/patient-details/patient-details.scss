@@ -1,0 +1,27 @@
+.patient-details-container {
+    display: flex;
+    gap: 30px;
+    height: 100%
+}
+
+.tabs {
+    width: 100%;
+}
+
+.lab-tests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    border-radius: 10px;
+}
+
+.table {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 80%;
+    table-layout: auto;
+    flex: 1 1 auto;
+}

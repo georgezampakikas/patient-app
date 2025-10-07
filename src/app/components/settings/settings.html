@@ -1,0 +1,24 @@
+<nz-table
+    class="settings-table"
+    [nzData]="labTests"
+    [appNsAutoHeightTable]=""
+    nzShowPagination="false"
+    nzSize="middle"
+>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Unit</th>
+          <th>NormalRange</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (labTest of labTests; track labTest.id) {
+            <tr>
+                <td>{{ labTest.name }}</td>
+                <td>{{ labTest.unit }}</td>
+                <td>{{ labTest.normalRange }}</td>
+            </tr>
+        }
+      </tbody>
+</nz-table>

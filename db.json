@@ -1,0 +1,1910 @@
+{
+  "patients": [
+    {
+      "id": "1",
+      "patientIdentity": {
+        "amka": "2910930002",
+        "code": "000001",
+        "firstName": "Νικόλαοςs",
+        "lastName": "Παπαδόπουλος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "18/03/92",
+        "birthPlace": "Αθήνα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Γεώργιος",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 3,
+          "name": "Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 3,
+        "phone1": "2101234567",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234501",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2101234568",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Πατησίων 45, Αθήνα, 10682",
+        "email": "n.papadopoulos@email.gr"
+      }
+    },
+    {
+      "id": "2",
+      "patientIdentity": {
+        "amka": "1508881234",
+        "code": "000002",
+        "firstName": "Μαρία",
+        "lastName": "Παπαδοπούλου",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "29/10/25",
+        "birthPlace": "Αθήνα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Κωνσταντίνος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 2,
+          "name": "Δάσκαλος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2610123456",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234502",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2610123457",
+        "phone3Label": null,
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Κορίνθου 78, Πάτρα, 26221",
+        "email": "m.papadopoulou@email.gr"
+      }
+    },
+    {
+      "id": "3",
+      "patientIdentity": {
+        "code": "000003",
+        "amka": "0307925678",
+        "lastName": "Παπαδόπουλος",
+        "firstName": "Δημήτριος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "03/07/92",
+        "birthPlace": "Θεσσαλονίκη",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Παναγιώτης",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 4,
+          "name": "Λογιστής"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2310234567",
+        "phone1Label": "Σταθερό",
+        "phone2TypeId": 1,
+        "phone2": "6901234503",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2310234568",
+        "phone3Label": "Γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": "Οικία",
+        "address": "Τσιμισκή 120, Θεσσαλονίκη, 54621",
+        "email": "d.papadopoulos@email.gr"
+      }
+    },
+    {
+      "id": "4",
+      "patientIdentity": {
+        "code": "000004",
+        "amka": "2201851111",
+        "lastName": "Γεωργίου",
+        "firstName": "Ελένη",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "22/01/85",
+        "birthPlace": "Λάρισα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Νικόλαος",
+        "motherName": "Αικατερίνη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 7,
+          "name": "Νοσηλεύτρια"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2410345678",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234504",
+        "phone2Label": "Κινητό τηλέφωνο",
+        "phone3TypeId": 3,
+        "phone3": "2410345679",
+        "phone3Label": "Νοσοκομείο",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη διεύθυνση",
+        "address": "Παπαναστασίου 56, Λάρισα, 41222",
+        "email": "e.georgiou@email.gr"
+      }
+    },
+    {
+      "id": "5",
+      "patientIdentity": {
+        "code": "000005",
+        "amka": "1112901122",
+        "lastName": "Γεωργίου",
+        "firstName": "Κωνσταντίνος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "11/12/90",
+        "birthPlace": "Ηράκλειο",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Ανδρέας",
+        "motherName": "Δέσποινα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 12,
+          "name": "Ηλεκτρολόγος"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2810456789",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234505",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2810456790",
+        "phone3Label": null,
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Δικαιοσύνης 23, Ηράκλειο, 71202",
+        "email": "k.georgiou@email.gr"
+      }
+    },
+    {
+      "id": "6",
+      "patientIdentity": {
+        "code": "000006",
+        "amka": "0809872233",
+        "lastName": "Κωνσταντίνου",
+        "firstName": "Σοφία",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "08/09/87",
+        "birthPlace": "Βόλος",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Σπυρίδων",
+        "motherName": "Βασιλική",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 8,
+          "name": "Φαρμακοποιός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2421567890",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234506",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2421567891",
+        "phone3Label": "Φαρμακείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Ιάσονος 34, Βόλος, 38221",
+        "email": "s.konstantinou@email.gr"
+      }
+    },
+    {
+      "id": "7",
+      "patientIdentity": {
+        "code": "000007",
+        "amka": "1705913344",
+        "lastName": "Κωνσταντίνου",
+        "firstName": "Ανδρέας",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "17/05/91",
+        "birthPlace": "Καβάλα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Χρήστος",
+        "motherName": "Αναστασία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 11,
+          "name": "Πολιτικός Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2510678901",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234507",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2510678902",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Ερυθρού Σταυρού 67, Καβάλα, 65403",
+        "email": "a.konstantinou@email.gr"
+      }
+    },
+    {
+      "id": "8",
+      "patientIdentity": {
+        "code": "000008",
+        "amka": "2403894455",
+        "lastName": "Ιωάννου",
+        "firstName": "Κατερίνα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "24/03/89",
+        "birthPlace": "Ιωάννινα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Θεόδωρος",
+        "motherName": "Χριστίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 1,
+          "name": "Γιατρός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2651789012",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234508",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2651789013",
+        "phone3Label": "Ιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Δωδώνης 89, Ιωάννινα, 45221",
+        "email": "k.ioannou@email.gr"
+      }
+    },
+    {
+      "id": "9",
+      "patientIdentity": {
+        "code": "000009",
+        "amka": "3011865566",
+        "lastName": "Ιωάννου",
+        "firstName": "Παναγιώτης",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "30/11/86",
+        "birthPlace": "Χανιά",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Μιχαήλ",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 5,
+          "name": "Δικηγόρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2821890123",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234509",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2821890124",
+        "phone3Label": "Δικηγορικό γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": "Διεύθυνση κατοικίας",
+        "address": "Χαλιδών 45, Χανιά, 73134",
+        "email": "p.ioannou@email.gr"
+      }
+    },
+    {
+      "id": "10",
+      "patientIdentity": {
+        "code": "000010",
+        "amka": "1402946677",
+        "lastName": "Δημητρίου",
+        "firstName": "Αναστασία",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "14/02/94",
+        "birthPlace": "Ρόδος",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Ιωάννης",
+        "motherName": "Κατερίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 9,
+          "name": "Αρχιτέκτονας"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2241901234",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234510",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2241901235",
+        "phone3Label": null,
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "28ης Οκτωβρίου 56, Ρόδος, 85100",
+        "email": "a.dimitriou@email.gr"
+      }
+    },
+    {
+      "id": "11",
+      "patientIdentity": {
+        "code": "000011",
+        "amka": "0606887788",
+        "lastName": "Δημητρίου",
+        "firstName": "Χρήστος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "06/06/88",
+        "birthPlace": "Κέρκυρα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Γεώργιος",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 6,
+          "name": "Πωλητής"
+        },
+        "education": {
+          "id": 3,
+          "name": "Λύκειο"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2661012345",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234511",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2661012346",
+        "phone3Label": "Κατάστημα",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη κατοικία",
+        "address": "Ν. Θεοτόκη 78, Κέρκυρα, 49100",
+        "email": "c.dimitriou@email.gr"
+      }
+    },
+    {
+      "id": "12",
+      "patientIdentity": {
+        "code": "000012",
+        "amka": "1909958899",
+        "lastName": "Νικολάου",
+        "firstName": "Βασιλική",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "19/09/95",
+        "birthPlace": "Αλεξανδρούπολη",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Δημήτριος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 10,
+          "name": "Δημοσιογράφος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2551123456",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234512",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2551123457",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Λ. Δημοκρατίας 34, Αλεξανδρούπολη, 68100",
+        "email": "v.nikolaou@email.gr"
+      }
+    },
+    {
+      "id": "13",
+      "patientIdentity": {
+        "code": "000013",
+        "amka": "2808839900",
+        "lastName": "Νικολάου",
+        "firstName": "Σπυρίδων",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "28/08/83",
+        "birthPlace": "Τρίκαλα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Κωνσταντίνος",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 13,
+          "name": "Οδοντίατρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2431234567",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234513",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2431234568",
+        "phone3Label": "Οδοντιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Ασκληπιού 90, Τρίκαλα, 42100",
+        "email": "s.nikolaou@email.gr"
+      }
+    },
+    {
+      "id": "14",
+      "patientIdentity": {
+        "code": "000014",
+        "amka": "0104920011",
+        "lastName": "Αθανασίου",
+        "firstName": "Δέσποινα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "01/04/92",
+        "birthPlace": "Καλαμάτα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Παναγιώτης",
+        "motherName": "Αικατερίνη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 7,
+          "name": "Νοσηλεύτρια"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2721345678",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234514",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2721345679",
+        "phone3Label": "Νοσοκομείο",
+        "addressTypeId": 1,
+        "addressLabel": "Διεύθυνση",
+        "address": "Φάρων 123, Καλαμάτα, 24100",
+        "email": "d.athanasiou@email.gr"
+      }
+    },
+    {
+      "id": "15",
+      "patientIdentity": {
+        "code": "000015",
+        "amka": "1207901122",
+        "lastName": "Αθανασίου",
+        "firstName": "Θεόδωρος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "12/07/90",
+        "birthPlace": "Κομοτηνή",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Ανδρέας",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 14,
+          "name": "Κτηνίατρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2531456789",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234515",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2531456790",
+        "phone3Label": "Κτηνιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Ορφέως 67, Κομοτηνή, 69100",
+        "email": "t.athanasiou@email.gr"
+      }
+    },
+    {
+      "id": "16",
+      "patientIdentity": {
+        "code": "000016",
+        "amka": "2510962233",
+        "lastName": "Παπαγιάννης",
+        "firstName": "Ιωάννης",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "25/10/96",
+        "birthPlace": "Χαλκίδα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Νικόλαος",
+        "motherName": "Χριστίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 12,
+          "name": "Ηλεκτρολόγος"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2221567890",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234516",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2221567891",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Βενιζέλου 45, Χαλκίδα, 34100",
+        "email": "i.papagiannis@email.gr"
+      }
+    },
+    {
+      "id": "17",
+      "patientIdentity": {
+        "code": "000017",
+        "amka": "0301873344",
+        "lastName": "Παπαγιάννη",
+        "firstName": "Χριστίνα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "03/01/87",
+        "birthPlace": "Σέρρες",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Γεώργιος",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 8,
+          "name": "Φαρμακοποιός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2321678901",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234517",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2321678902",
+        "phone3Label": "Φαρμακείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Μεραρχίας 78, Σέρρες, 62100",
+        "email": "c.papagianni@email.gr"
+      }
+    },
+    {
+      "id": "18",
+      "patientIdentity": {
+        "code": "000018",
+        "amka": "1611914455",
+        "lastName": "Βασιλείου",
+        "firstName": "Γεώργιος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "16/11/91",
+        "birthPlace": "Δράμα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Δημήτριος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 3,
+          "name": "Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2521789012",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234518",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2521789013",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "1ης Ιουλίου 34, Δράμα, 66100",
+        "email": "g.vasileiou@email.gr"
+      }
+    },
+    {
+      "id": "19",
+      "patientIdentity": {
+        "amka": "2012845566",
+        "code": "000019",
+        "firstName": "Αικατερίνη",
+        "lastName": "Βασιλείου",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "03/07/92",
+        "birthPlace": "Κιλκίς",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Ιωάννης",
+        "motherName": "Βασιλική",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 2,
+          "name": "Δάσκαλος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2341890123",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234519",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2341890124",
+        "phone3Label": "Σχολείο",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη κατοικία",
+        "address": "Καπέτα Γεωργίου 56, Κιλκίς, 61100",
+        "email": "a.vasileiou@email.gr"
+      }
+    },
+    {
+      "id": "20",
+      "patientIdentity": {
+        "code": "000020",
+        "amka": "0905936677",
+        "lastName": "Αντωνίου",
+        "firstName": "Μιχαήλ",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "09/05/93",
+        "birthPlace": "Ξάνθη",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Αθανάσιος",
+        "motherName": "Δέσποινα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 4,
+          "name": "Λογιστής"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2541901234",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234520",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2541901235",
+        "phone3Label": "Γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Βασ. Γεωργίου 89, Ξάνθη, 67100",
+        "email": "m.antoniou@email.gr"
+      }
+    }
+  ],
+  "genders": [
+    {
+      "id": "1",
+      "name": "Άρρεν",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Θήλυ",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Άλλο",
+      "isActive": true
+    }
+  ],
+  "maritalStatuses": [
+    {
+      "id": "1",
+      "name": "Άγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Έγγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Διαζευγμένος/η",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Χήρος/α",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Σε συμβίωση",
+      "isActive": true
+    }
+  ],
+  "nationalities": [
+    {
+      "id": "1",
+      "name": "Ελληνική",
+      "countryCode": "GR",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Αλβανική",
+      "countryCode": "AL",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Βουλγαρική",
+      "countryCode": "BG",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Γερμανική",
+      "countryCode": "DE",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Γαλλική",
+      "countryCode": "FR",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Ιταλική",
+      "countryCode": "IT",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Αγγλική",
+      "countryCode": "GB",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Αμερικανική",
+      "countryCode": "US",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Ρουμανική",
+      "countryCode": "RO",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Ρωσική",
+      "countryCode": "RU",
+      "isActive": true
+    }
+  ],
+  "professions": [
+    {
+      "id": "1",
+      "name": "Γιατρός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Δάσκαλος",
+      "category": "Εκπαίδευση",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Λογιστής",
+      "category": "Οικονομικά",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Δικηγόρος",
+      "category": "Νομικά",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Πωλητής",
+      "category": "Εμπόριο",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Νοσηλεύτρια",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Φαρμακοποιός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Αρχιτέκτονας",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Δημοσιογράφος",
+      "category": "ΜΜΕ",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "name": "Πολιτικός Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "12",
+      "name": "Ηλεκτρολόγος",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "13",
+      "name": "Οδοντίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "14",
+      "name": "Κτηνίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "name": "Συνταξιούχος",
+      "category": "Άλλα",
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "category": "Άλλα",
+      "isActive": true
+    }
+  ],
+  "educationLevels": [
+    {
+      "id": "1",
+      "name": "Δημοτικό",
+      "order": 1,
+      "years": 6,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Γυμνάσιο",
+      "order": 2,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Λύκειο",
+      "order": 3,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Ανώτερη",
+      "order": 4,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Ανώτατη",
+      "order": 5,
+      "years": 4,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Μεταπτυχιακό",
+      "order": 6,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Διδακτορικό",
+      "order": 7,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "order": 999,
+      "years": 0,
+      "isActive": true
+    }
+  ],
+  "phoneType": [
+    {
+      "id": "1",
+      "name": "Οικίας"
+    },
+    {
+      "id": "2",
+      "name": "Κινητό"
+    },
+    {
+      "id": "3",
+      "name": "Εργασίας"
+    },
+    {
+      "id": "4",
+      "name": "Άλλο"
+    }
+  ],
+  "addressType": [
+    {
+      "id": "1",
+      "name": "Οικίας"
+    },
+    {
+      "id": "2",
+      "name": "Εργασίας"
+    },
+    {
+      "id": "3",
+      "name": "Προσωρινή"
+    },
+    {
+      "id": "4",
+      "name": "Άλλο"
+    }
+  ],
+  "labTests": [
+    {
+      "id": "1",
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "normalRange": "12-16"
+    },
+    {
+      "id": "2",
+      "name": "Glucose",
+      "unit": "mg/dL",
+      "normalRange": "70-100"
+    },
+    {
+      "id": "3",
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "normalRange": "<200"
+    },
+    {
+      "id": "4",
+      "name": "Thyroid Stimulating Hormone (TSH)",
+      "unit": "mIU/L",
+      "normalRange": "0.4-4.0"
+    },
+    {
+      "id": "5",
+      "name": "Hemoglobin A1C",
+      "unit": "%",
+      "normalRange": "<5.7"
+    },
+    {
+      "id": "6",
+      "name": "ALT (Alanine Aminotransferase)",
+      "unit": "U/L",
+      "normalRange": "7-40"
+    },
+    {
+      "id": "7",
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "normalRange": "0.6-1.2"
+    },
+    {
+      "id": "8",
+      "name": "Vitamin D",
+      "unit": "ng/mL",
+      "normalRange": "30-100"
+    },
+    {
+      "id": "9",
+      "name": "C-Reactive Protein (CRP)",
+      "unit": "mg/L",
+      "normalRange": "<3.0"
+    },
+    {
+      "id": "10",
+      "name": "White Blood Cell Count",
+      "unit": "K/uL",
+      "normalRange": "4.5-11.0"
+    }
+  ],
+  "patientTestResults": [
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 1,
+      "result": 14.2,
+      "id": "69b4"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 2,
+      "result": 88,
+      "id": "6240"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 3,
+      "result": 198,
+      "id": "2404"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 1,
+      "result": 13.9,
+      "id": "d675"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 2,
+      "result": 92,
+      "id": "3e02"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 3,
+      "result": 205,
+      "id": "df48"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 1,
+      "result": 14,
+      "id": "2ee0"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 2,
+      "result": 95,
+      "id": "e0d5"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 3,
+      "result": 212,
+      "id": "36a1"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 1,
+      "result": 13.7,
+      "id": "c64f"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 2,
+      "result": 98,
+      "id": "9350"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 3,
+      "result": 220,
+      "id": "649f"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-22",
+      "testId": 5,
+      "result": 5.8,
+      "id": "0fe4"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-22",
+      "testId": 5,
+      "result": 6.1,
+      "id": "863d"
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-22",
+      "testId": 5,
+      "result": 6.4,
+      "id": "8a49"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-10",
+      "testId": 2,
+      "result": 95,
+      "id": "580d"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-10",
+      "testId": 4,
+      "result": 2.1,
+      "id": "4ecb"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-08",
+      "testId": 7,
+      "result": 1,
+      "id": "742c"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-08-28",
+      "testId": 8,
+      "result": 32,
+      "id": "f55a"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-07-20",
+      "testId": 1,
+      "result": 13.8,
+      "id": "ea29"
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-06-10",
+      "testId": 5,
+      "result": 6.1,
+      "id": "c922"
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-09-12",
+      "testId": 6,
+      "result": 28,
+      "id": "3993"
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-09-12",
+      "testId": 9,
+      "result": 1.2,
+      "id": "1b42"
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-08-30",
+      "testId": 10,
+      "result": 7.5,
+      "id": "1ca6"
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-07-20",
+      "testId": 1,
+      "result": 13.9,
+      "id": "7289"
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-06-05",
+      "testId": 4,
+      "result": 3.2,
+      "id": "54e5"
+    }
+  ],
+  "labTestsV2": [
+    {
+      "id": "1",
+      "code": "CBC-WBC",
+      "name": "White Blood Cell Count",
+      "unit": "10^9/L",
+      "normalValues": "4.5-11.0",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "2",
+      "code": "CBC-RBC",
+      "name": "Red Blood Cell Count",
+      "unit": "10^12/L",
+      "normalValues": "4.5-5.9 (M), 4.0-5.2 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "3",
+      "code": "CBC-HGB",
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "normalValues": "13.5-17.5 (M), 12.0-15.5 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "4",
+      "code": "CBC-HCT",
+      "name": "Hematocrit",
+      "unit": "%",
+      "normalValues": "38.8-50.0 (M), 34.9-44.5 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "5",
+      "code": "CBC-PLT",
+      "name": "Platelet Count",
+      "unit": "10^9/L",
+      "normalValues": "150-400",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "6",
+      "code": "BMP-GLU",
+      "name": "Glucose",
+      "unit": "mg/dL",
+      "normalValues": "70-100 (fasting)",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "7",
+      "code": "BMP-NA",
+      "name": "Sodium",
+      "unit": "mmol/L",
+      "normalValues": "136-145",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "8",
+      "code": "BMP-K",
+      "name": "Potassium",
+      "unit": "mmol/L",
+      "normalValues": "3.5-5.0",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "9",
+      "code": "BMP-CL",
+      "name": "Chloride",
+      "unit": "mmol/L",
+      "normalValues": "98-107",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "10",
+      "code": "BMP-CO2",
+      "name": "Carbon Dioxide",
+      "unit": "mmol/L",
+      "normalValues": "23-29",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "11",
+      "code": "BMP-BUN",
+      "name": "Blood Urea Nitrogen",
+      "unit": "mg/dL",
+      "normalValues": "7-20",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "12",
+      "code": "BMP-CREAT",
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "normalValues": "0.7-1.3 (M), 0.6-1.1 (F)",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "13",
+      "code": "BMP-CA",
+      "name": "Calcium",
+      "unit": "mg/dL",
+      "normalValues": "8.5-10.5",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "14",
+      "code": "LFT-ALT",
+      "name": "Alanine Aminotransferase",
+      "unit": "U/L",
+      "normalValues": "7-56",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "15",
+      "code": "LFT-AST",
+      "name": "Aspartate Aminotransferase",
+      "unit": "U/L",
+      "normalValues": "10-40",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "16",
+      "code": "LFT-ALP",
+      "name": "Alkaline Phosphatase",
+      "unit": "U/L",
+      "normalValues": "44-147",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "17",
+      "code": "LFT-TBIL",
+      "name": "Total Bilirubin",
+      "unit": "mg/dL",
+      "normalValues": "0.1-1.2",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "18",
+      "code": "LFT-ALB",
+      "name": "Albumin",
+      "unit": "g/dL",
+      "normalValues": "3.5-5.5",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "19",
+      "code": "LFT-TP",
+      "name": "Total Protein",
+      "unit": "g/dL",
+      "normalValues": "6.0-8.3",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "20",
+      "code": "LIPID-TC",
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": "<200",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "21",
+      "code": "LIPID-HDL",
+      "name": "HDL Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": ">40 (M), >50 (F)",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "22",
+      "code": "LIPID-LDL",
+      "name": "LDL Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": "<100",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "23",
+      "code": "LIPID-TG",
+      "name": "Triglycerides",
+      "unit": "mg/dL",
+      "normalValues": "<150",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "24",
+      "code": "THYROID-TSH",
+      "name": "Thyroid Stimulating Hormone",
+      "unit": "mIU/L",
+      "normalValues": "0.4-4.0",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "25",
+      "code": "THYROID-T4",
+      "name": "Free T4",
+      "unit": "ng/dL",
+      "normalValues": "0.8-1.8",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "26",
+      "code": "THYROID-T3",
+      "name": "Free T3",
+      "unit": "pg/mL",
+      "normalValues": "2.3-4.2",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "27",
+      "code": "HBA1C",
+      "name": "Hemoglobin A1C",
+      "unit": "%",
+      "normalValues": "<5.7",
+      "category": "Diabetes Monitoring"
+    },
+    {
+      "id": "28",
+      "code": "COAG-PT",
+      "name": "Prothrombin Time",
+      "unit": "seconds",
+      "normalValues": "11-13.5",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "29",
+      "code": "COAG-INR",
+      "name": "International Normalized Ratio",
+      "unit": "ratio",
+      "normalValues": "0.8-1.2",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "30",
+      "code": "COAG-PTT",
+      "name": "Partial Thromboplastin Time",
+      "unit": "seconds",
+      "normalValues": "25-35",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "31",
+      "code": "IRON-FE",
+      "name": "Serum Iron",
+      "unit": "mcg/dL",
+      "normalValues": "60-170",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "32",
+      "code": "IRON-TIBC",
+      "name": "Total Iron Binding Capacity",
+      "unit": "mcg/dL",
+      "normalValues": "240-450",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "33",
+      "code": "IRON-FERR",
+      "name": "Ferritin",
+      "unit": "ng/mL",
+      "normalValues": "12-300 (M), 12-150 (F)",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "34",
+      "code": "VIT-D",
+      "name": "Vitamin D (25-OH)",
+      "unit": "ng/mL",
+      "normalValues": "30-100",
+      "category": "Vitamins"
+    },
+    {
+      "id": "35",
+      "code": "VIT-B12",
+      "name": "Vitamin B12",
+      "unit": "pg/mL",
+      "normalValues": "200-900",
+      "category": "Vitamins"
+    },
+    {
+      "id": "36",
+      "code": "CRP",
+      "name": "C-Reactive Protein",
+      "unit": "mg/L",
+      "normalValues": "<3.0",
+      "category": "Inflammatory Markers"
+    },
+    {
+      "id": "37",
+      "code": "ESR",
+      "name": "Erythrocyte Sedimentation Rate",
+      "unit": "mm/hr",
+      "normalValues": "0-15 (M), 0-20 (F)",
+      "category": "Inflammatory Markers"
+    },
+    {
+      "id": "38",
+      "code": "URIC",
+      "name": "Uric Acid",
+      "unit": "mg/dL",
+      "normalValues": "3.5-7.2 (M), 2.6-6.0 (F)",
+      "category": "Metabolic Panel"
+    },
+    {
+      "id": "39",
+      "code": "MG",
+      "name": "Magnesium",
+      "unit": "mg/dL",
+      "normalValues": "1.7-2.2",
+      "category": "Electrolytes"
+    },
+    {
+      "id": "40",
+      "code": "PHOS",
+      "name": "Phosphorus",
+      "unit": "mg/dL",
+      "normalValues": "2.5-4.5",
+      "category": "Electrolytes"
+    }
+  ]
+}

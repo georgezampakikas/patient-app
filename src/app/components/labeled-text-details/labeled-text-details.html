@@ -1,0 +1,14 @@
+<div class="patient-data-container">
+    <div >
+        <nz-icon class="icon" nzType="{{ patientData.icon }}" nzTheme="outline" />
+    </div>
+    <div class="label-text-container">
+        <div class="label">{{ patientData.label }}</div>
+
+        @if (patientData.type === 'url' || patientData.type === 'telephone') {
+            <a class="text">{{ patientData.text }}</a>
+        } @else {
+            <div class="text"> {{ patientData.text }}</div>
+        }
+    </div>        
+</div>

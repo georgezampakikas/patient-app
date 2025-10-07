@@ -1,0 +1,46 @@
+  <div class="lab-sections-wrapper">
+    <div class="left-content">
+      @for (group of labTestsByCategory; track group;) {
+        <div class="lab-section">
+          <h2 class="custom-header-3">{{ group.category }}</h2>
+            <nz-checkbox-group 
+              class="checkbox-flexbox" 
+              [(ngModel)]="selectedIds" 
+              (ngModelChange)="updateSelectedValues()"
+              name="selectedValues"
+            >
+              @for (test of group.tests; track test.id) {
+                <label nz-checkbox [nzValue]="test.id">{{ test.name }}</label>
+              }
+            </nz-checkbox-group>
+        </div>
+      }
+    </div>
+
+    <nz-divider nzType="vertical" class="vertical-divider"></nz-divider>
+
+    <div class="right-content">
+      <div class="custom-header-3">Εξετάσεις που έχουν προστεθεί</div>
+        @for(value of selectedValues; track value.id) {
+            <div class="tests-container">
+              <div>{{ value.name }}</div> 
+              <nz-icon 
+                class="icon" 
+                nzType="minus-circle" 
+                nzTheme="outline"
+                (click)="deleteSelectedValue(value.id)" 
+              />
+            </div>
+            <nz-divider></nz-divider>
+        }
+    </div>
+
+  </div>
+  <div class="footer">
+    <nz-divider></nz-divider>
+
+    <div class="footer-btns">
+      <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
+      <button class="button" nz-button nzType="primary" type="submit" (click)="onSubmit()">Καταχώρηση</button>
+    </div>    
+  </div>

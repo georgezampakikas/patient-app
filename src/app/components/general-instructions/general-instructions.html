@@ -1,0 +1,40 @@
+<div class="gi">
+  <div class="gi__table-wrapper">
+    <nz-table
+      class="gi__table"
+      [appNsAutoHeightTable]=""
+      nzSize="small"
+      [nzPageSize]="30"
+      [nzData]="listOfData"
+      nzShowPagination="false"
+    >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (data of listOfData; track data.key) {
+          <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.address }}</td>
+            <td class="gi__actions">
+              <a>Action 一 {{ data.name }}</a>
+              <a>Delete</a>
+            </td>
+          </tr>
+        }
+        @empty {
+          <tr>
+            <td colspan="4">No data available</td>
+          </tr>
+        }
+      </tbody>
+    </nz-table>
+  </div>
+</div>

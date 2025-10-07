@@ -1,0 +1,44 @@
+<form nz-form [formGroup]="patientIdentityForm" (ngSubmit)="submitForm()">
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="amka">A.M.K.A.</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="amka" type="text" name="amka"  formControlName="amka" />
+        </nz-form-control>
+      </div>
+
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="code">Κωδικός</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="code" name="code" type="text" formControlName="code" />
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="firstName">Ονοματεπώνυμο</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="firstName" name="firstName" type="text" formControlName="firstName" />
+        </nz-form-control>
+      </div>
+
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="lastName">Όνομα Προτίμησης</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="lastName" name="lastName" type="text" formControlName="lastName" />
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+    <nz-divider></nz-divider>
+
+    <div class="footer-btns">
+        <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
+        <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
+    </div>
+</form>

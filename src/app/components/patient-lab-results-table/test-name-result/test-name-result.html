@@ -1,0 +1,53 @@
+<div class="modal-container">
+    <div class="modal-item">
+        <nz-statistic [nzValue]="lastTestResult!.result" nzTitle="Τελευταία Μέτρηση" [nzSuffix]="sufixTemplate"></nz-statistic>    
+        <ng-template #sufixTemplate>
+            <span class="statistic-suffix"> {{ lastTestResult!.issueDate| date: 'shortDate' }} </span>
+        </ng-template>
+    </div>
+   
+    <div class="flex-grow">
+        <div class="chart-container" #chartContainerDiv>
+            <ngx-charts-line-chart
+                class="line-chart"
+                [view]="[getCalculatedWidth(), 400]"
+                [scheme]="assayChart.scheme"
+                [results]="multi"
+                [xAxis]="assayChart.xAxis"
+                [yAxis]="assayChart.yAxis"
+                [showXAxisLabel]="assayChart.showLabels"
+                [showYAxisLabel]="assayChart.showLabels"
+                xAxisLabel="Ημερομηνία"
+                [timeline]="assayChart.timeline"
+            >
+            </ngx-charts-line-chart>              
+        </div>
+  
+    </div>
+
+    <div class="modal-item">
+        <nz-table 
+            class="table"
+            [nzData]="filteredResults"
+            [appNsAutoHeightTable]=""
+            nzShowPagination="false"
+            nzSize="middle"
+        >
+            <thead>
+                <tr>
+                    <th>IssueDate</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(patientTestResult of filteredResults; track patientTestResult) {
+                    <tr>
+                        <td>{{ patientTestResult.issueDate | date: 'shortDate' }}</td>
+                        <td>{{ patientTestResult.result }} {{patientTestResult.unit}}</td>
+                    </tr>
+                }
+            </tbody>
+        </nz-table>    
+    </div>    
+</div>
+

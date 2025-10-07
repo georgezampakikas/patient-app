@@ -1,0 +1,84 @@
+<nz-layout class="app-layout">
+  <nz-sider 
+    class="app-sidebar" 
+    [nzWidth]="'220px'"
+    nzCollapsible
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
+    <div class="sidebar__title">
+      <a href="#" class="sidebar__brand">
+          <h1>Medicalinfo</h1>
+      </a>
+    </div>
+
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item nzMatchRouter>
+        <a
+          routerLink="/patients/"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+          <span>Ασθενείς</span>
+        </a>        
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a
+          [routerLink]="['/patient-details', 1]"
+          routerLinkActive="is-active"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+          <span>Στοιχεία Ασθενή</span>
+        </a>        
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a
+          routerLink="/new-patients"
+          routerLinkActive="is-active"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+          <span>Νέοι Ασθενείς</span>
+        </a>        
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a
+          routerLink="/settings"
+          routerLinkActive="is-active"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+          <span>Settings</span>
+        </a>        
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout class="app-main">
+    <nz-header class="app-header">
+      <div class="app-header__left">
+        <a class="app-header__trigger" (click)="isCollapsed = !isCollapsed">
+          <nz-icon
+            class="app-header__icon"
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            nzSize="large"
+          ></nz-icon>
+        </a>
+      </div>
+
+      <div class="app-header__right">
+        <a class="app-header__avatar" (click)="isUp = !isUp">
+          <nz-icon nzType="user" nzTheme="outline" class="avatar-icon"></nz-icon>
+          <nz-icon class="avatar-icon" [nzType]="isUp ? 'up' : 'down'" nzTheme="outline" nzSize="large"></nz-icon>
+        </a>
+      </div>
+    </nz-header>
+
+    <nz-content class="app-content">
+      <router-outlet />
+    </nz-content>
+  </nz-layout>
+</nz-layout>

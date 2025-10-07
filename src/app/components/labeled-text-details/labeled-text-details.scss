@@ -1,0 +1,26 @@
+.patient-data-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.icon, .label {
+    color: #333333;
+    opacity: 65%;
+}
+
+.label-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text {
+    color: #333333;
+    opacity: 55%;
+    font-weight: bold;
+}
+
+a.text {
+    color: #0077B3;
+}

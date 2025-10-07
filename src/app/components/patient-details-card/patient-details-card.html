@@ -1,0 +1,77 @@
+<div class="patient-details-card">
+    <div class="profile">
+        <div class="avatar-container">
+            <nz-avatar
+                class="avatar-icon"
+                nzIcon="user" 
+                nzSrc="assets/images/user.jpg"
+            ></nz-avatar>        
+        </div>
+
+        <div class="user-name-container">
+            <div class="user-name">{{ patientData()?.patientIdentity?.firstName }}</div>
+            <div>
+                <nz-icon class="lock-icon" nzType="lock" nzTheme="outline" />
+            </div>
+        </div>
+
+        <div class="user-details">
+            <div class="user-details-item">{{ patientData()?.demographicInfo?.birthDate }}</div>
+            <div class="user-details-item">
+                <nz-icon nzType="man" nzTheme="outline" />        
+            </div>
+            <div class="user-details-item">{{ patientData()?.demographicInfo?.gender?.name }}</div>
+            <div class="user-details-item">{{ patientData()?.patientIdentity?.code }}</div>
+        </div>        
+    </div>
+
+    <nz-divider nzSize="large"></nz-divider>
+        @if(
+            personalInfo() &&
+            fathersName() &&
+            emergencyCall() &&
+            contact() &&
+            email() &&
+            address()
+        ) {
+            <div class="labeled-text-container">
+                <div class="custom-header-2">Προσωπικά Στοιχεία</div>
+                <app-labeled-text-details 
+                    [patientData]="personalInfo()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="fathersName()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="emergencyCall()" 
+                />        
+            </div>
+
+            <nz-divider></nz-divider>
+
+            <div class="labeled-text-container">
+                <div class="custom-header-2">Στοιχεία Επικοινωνίας</div>
+                
+                <app-labeled-text-details 
+                    [patientData]="contact()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="email()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="address()" 
+                />        
+            </div>
+        }
+    <nz-divider></nz-divider>
+    
+    <div class="tags-container">
+        <div class="custom-header-2 tags-header" >Tags</div>
+        <div class="tags">
+            <nz-tag class="tag">Tag-1</nz-tag>
+            <nz-tag class="tag">Tag-2</nz-tag>
+            <nz-tag class="tag">Tag-3</nz-tag>
+            <nz-tag class="tag">Tag-4</nz-tag>        
+        </div>        
+    </div>
+</div>

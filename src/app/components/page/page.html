@@ -1,0 +1,37 @@
+<div class="page">
+  <div class="page__header">
+    <div class="page__title">
+      <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Page Header" nzSubtitle="Patient Name"></nz-page-header>
+    </div>
+
+    <div class="page__actions">
+      <button class="btn" nz-button nzType="primary" (click)="openDrawer()">Πλήρες Ιστορικό</button>
+      <button class="btn" nz-button nzType="primary">Επικοινωνία</button>
+    </div>
+  </div>
+
+  <nz-card class="page-info" [nzTitle]="userInfoTemplate">
+     <div class="page-descriptions">
+      <app-labeled-text label="UserName" [text]="userInfo.UserName" />
+      <app-labeled-text label="Telephone" [text]="userInfo.Telephone" />
+      <app-labeled-text label="Live" [text]="userInfo.Live" />
+      <app-labeled-text label="Remark" [text]="userInfo.Remark" />
+      <app-labeled-text label="Address" [text]="userInfo.Address" />
+    </div>   
+  </nz-card>
+
+  <ng-template #userInfoTemplate>
+    <div class="custom-header">User Info</div>
+  </ng-template>
+
+  <div class="page__tabs">
+    <nz-tabs class="tabs">
+      <nz-tab nzTitle="Γενικές Οδηγίες">
+        <div class="tabs__content">
+          <app-general-instructions></app-general-instructions>
+        </div>
+      </nz-tab>
+    </nz-tabs>
+  </div>
+</div>
+

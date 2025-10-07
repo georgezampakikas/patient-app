@@ -1,0 +1,51 @@
+.user-info-wrapper {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+}
+
+.cards {
+    border: 6px;
+    background: #fff;
+}
+
+.labeled-text-container-identity {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);  
+    // align-items: center;
+    justify-content: space-between;
+    gap: 20px;  
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.labeled-text-container-demographic {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 20%);  
+    gap: 20px;  
+}
+
+.labeled-text-container-contact {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 20%);  
+    gap: 20px;  
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: bold;
+    color: #333333;
+    opacity: 75%;
+}
+
+// .drawer-title {
+//     background: ;
+// }
