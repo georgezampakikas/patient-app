@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, computed, inject, OnInit, signal, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NzCardModule } from "ng-zorro-antd/card";
@@ -11,13 +11,11 @@ import { NzDrawerModule, NzDrawerService } from 'ng-zorro-antd/drawer';
 import { take } from 'rxjs';
 
 import { UserService } from '../../shared/user-service';
-import { PatientDto, PatientIdentity } from '../../shared/patient-modal';
+import { PatientDto } from '../../shared/patient-modal';
 import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user-info";
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
 import { ContactInfoForm } from '../contact-info-form/contact-info-form';
-import { StableElements } from '../stable-elements/stable-elements';
-import { PatientDetailsCard } from '../patient-details-card/patient-details-card';
 import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 
 @Component({
@@ -48,6 +46,12 @@ export class UserInfo implements OnInit {
   
   readonly patientId = Number(this.route.snapshot.paramMap.get('id'));
 
+  firstName = signal<string>('');
+  lastName = signal<(string | null)[]>([]);
+
+  fullName = computed(() => {
+    return this.lastName().join(' ') + ' ' + this.firstName();
+  });
 
   ngOnInit(): void {
     this.loadLabeledText();
@@ -59,6 +63,9 @@ export class UserInfo implements OnInit {
       .subscribe({
         next: (res: PatientDto) => {
           this.patient = res;
+
+          this.firstName.set(this.patient.patientIdentity.firstName!);
+          this.lastName.set(this.patient.patientIdentity.lastName!);
         },
         error: err => {
           this.notification.error('Error', 'loadLabeledData error');
@@ -68,32 +75,62 @@ export class UserInfo implements OnInit {
       });
   }
 
-  openStableElementsDrawer(): void {
+    openContactInfoDrawer(): void {
     const drawerRef = this.drawerService.create({
-      nzTitle: 'Σταθερά Στοιχεία',
-      nzContent: StableElements,
-      nzData: { patientsData: this.patient },
+      nzTitle: 'Επεξεργασία Στοιχείων Επικοινωνίας',
+      nzContent: ContactInfoForm,
+      nzData: { patientData: this.patient },
       nzMaskClosable: false,
       nzClosable: false,
-      nzWidth: this.drawerWidth
+      nzWidth: '40%'
     });
 
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
-        this.userService.putPatient(this.patientId, updatedPatient)
-        .pipe(take(1))
-        .subscribe({
-          next: () => {
-            this.notification.success('Successfully', 'put patients data');
-            this.loadLabeledText();
-            this.reloadService.reloadPatientDetailsCard(this.patientId);
+       this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
+          this.loadLabeledText();
+          this.reloadService.reloadPatientDetailsCard(this.patientId);
+       }); 
+      }
+    });
+  }
 
-          },
-          error: err => {
-            this.notification.error('Error:', 'put method failed');
-            console.log(err);
-          }
-        });
+  openDemographicInfoDrawer(): void {
+    const drawerRef = this.drawerService.create({
+      nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
+      nzContent: DemographicInfoForm,
+      nzData: { patientData: this.patient },
+      nzMaskClosable: false,
+      nzClosable: false,
+      nzWidth: '30%'
+    });
+
+    drawerRef.afterClose.subscribe((updatedPatient) => {
+      if (updatedPatient) {
+       this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
+          this.loadLabeledText();
+          this.reloadService.reloadPatientDetailsCard(this.patientId);
+       }); 
+      }
+    });
+  }
+
+    openPatientIdentityDrawer(): void {
+    const drawerRef = this.drawerService.create({
+      nzTitle: 'Επεξεργασία Στοιχείων Ταυτότητας',
+      nzContent: PatientIdentityForm,
+      nzData: { patientData: this.patient },
+      nzMaskClosable: false,
+      nzClosable: false,
+      nzWidth: '30%'
+    });
+
+    drawerRef.afterClose.subscribe((updatedPatient) => {
+      if (updatedPatient) {
+       this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
+          this.loadLabeledText();
+          this.reloadService.reloadPatientDetailsCard(this.patientId);
+       }); 
       }
     });
   }

@@ -8,8 +8,9 @@ export interface PatientDto {
 export interface PatientIdentity {
   code: string;
   amka: string;
-  lastName: string;
+  lastName: (string | null)[];
   firstName: string;
+  fullName?: string;
   status: string;
 }
 

@@ -2,10 +2,9 @@
     <nz-card class="cards" [nzTitle]="patientIdentity">
         <div class="labeled-text-container-identity">
             <app-labeled-text-user-info label="Κωδικός" [text]="patient?.patientIdentity?.code" />
-            <app-labeled-text-user-info class = "span-2" label="Ονοματεπώνυμο" [text]="patient?.patientIdentity?.firstName" />
+            <app-labeled-text-user-info class = "span-2" label="Ονοματεπώνυμο" [text]="fullName()" />
             <app-labeled-text-user-info label="Κατάσταση" [text]="patient?.patientIdentity?.status" />
             <app-labeled-text-user-info label="ΑΜΚΑ" [text]="patient?.patientIdentity?.amka" />
-            <app-labeled-text-user-info class="span-2" label="Όνομα Προτίμησης" [text]="patient?.patientIdentity?.lastName" />            
         </div>
 
     </nz-card>
@@ -13,7 +12,7 @@
     <ng-template #patientIdentity>
         <div class="title-container">
             <div class="title">Στοιχεία ταυτότητας</div>
-            <a class="edit-button" (click)="openStableElementsDrawer()">
+            <a class="edit-button" (click)="openPatientIdentityDrawer()">
                 <nz-icon nzType="edit" nzTheme="outline" />
             </a>
         </div>
@@ -37,7 +36,7 @@
     <ng-template #demographicInfo>
         <div class="title-container">
             <div class="title">Δημογραφικά Στοιχεία</div>
-            <a class="edit-button">
+            <a class="edit-button" (click)="openDemographicInfoDrawer()">
                 <nz-icon nzType="edit" nzTheme="outline" />
             </a>
         </div>
@@ -56,7 +55,7 @@
     <ng-template #contactInfo>
         <div class="title-container">
             <div class="title">Στοιχεία Επικοινωνίας</div>
-            <a class="edit-button">
+            <a class="edit-button" (click)="openContactInfoDrawer()">
                 <nz-icon nzType="edit" nzTheme="outline" />
             </a>
         </div>

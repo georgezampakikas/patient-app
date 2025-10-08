@@ -1,13 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+}
 
 .label {
     color: #333333;
     opacity: 65%;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 10px;
+.inputs {
+    border: 1px solid #333333;
+    width: 90%;
+}
+
+.icon {
+    cursor: pointer;
+    color: red;
 }
 
 .footer-btns {
@@ -19,3 +33,12 @@
 .button {
     border-radius: 6px;
 }
+
+.add-name-button {
+    max-width: 254px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+

@@ -11,28 +11,34 @@
             />
         </nz-input-group>
         <nz-autocomplete #auto>
-            <div class="headers">
-                <div>Όνομα</div>
-                <div>Επώνυμο</div>
-                <div>A.M.K.A.</div>
-                <div>Κωδικός</div>
-                <div>Κατάσταση</div>
-            </div>
-            @for(patient of filteredPatients(); track patient.id) {
-                <nz-auto-option 
-                    [routerLink]="['/patient-details', patient.id]" 
-                    routerLinkActive="is-active"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                >
-                    <div class="content">
-                        <div>{{ patient.patientIdentity.firstName }}</div>
-                        <div>{{ patient.patientIdentity.lastName }}</div>
-                        <div>{{ patient.patientIdentity.amka }}</div>
-                        <div>{{ patient.patientIdentity.code }}</div>
-                        <div>{{ patient.patientIdentity.status }}</div>
-                    </div>
+            @if(filteredPatients().length > 0) {
+                <div class="headers">
+                    <div>Ονοματεπώνυμο</div>
+                    <div>A.M.K.A.</div>
+                    <div>Κατάσταση</div>
+                </div>
+                @for(patient of filteredPatients(); track patient.id) {
+                    <nz-auto-option 
+                        [routerLink]="['/patient-details', patient.id]" 
+                        routerLinkActive="is-active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                    >
+                        <div class="content">
+                            <div class="flex-column-span">
+                                {{ patient.patientIdentity.fullName }}
+                                <span>{{ patient.patientIdentity.code }}</span>
+                            </div>
+                            <div>{{ patient.patientIdentity.amka }}</div>
+                            <div>{{ patient.patientIdentity.status }}</div>
+                        </div>
+                    </nz-auto-option>
+                }
+            }
+            @if (selectedPatient().trim().length > 3 && filteredPatients().length <= 0) {
+                <nz-auto-option>
+                    <nz-empty></nz-empty>
                 </nz-auto-option>
             }
-        </nz-autocomplete>
+            </nz-autocomplete>            
     </div>
 </div>

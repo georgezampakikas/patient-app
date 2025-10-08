@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Form, FormArray, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
 
-import { DemographicInfo, PatientDto, PatientIdentity } from '../../shared/patient-modal';
-import { UserService } from '../../shared/user-service';
+import { PatientDto, PatientIdentity } from '../../shared/patient-modal';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { id } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-patient-identity-form',
@@ -23,35 +23,63 @@ import { UserService } from '../../shared/user-service';
     NzDividerModule,
     NzInputModule,
     NzFormModule,
+    NzIconModule
   ],
   templateUrl: './patient-identity-form.html',
   styleUrl: './patient-identity-form.scss'
 })
 export class PatientIdentityForm implements OnInit {
-  nzData: { patientIdentityData: PatientIdentity } = inject(NZ_DRAWER_DATA);
+  nzData: { patientData: PatientDto } = inject(NZ_DRAWER_DATA);
 
-  initialUserInfoValues!: DemographicInfo;
+  firstName = signal<string>(this.nzData.patientData.patientIdentity.firstName!);
+  lastName = signal<(string | null)[]>(this.nzData.patientData.patientIdentity.lastName);
+
+  fullName = computed(() => {
+    return this.lastName().join(' ')+ ' '  + this.firstName();
+  });
 
   private drawerRef = inject(NzDrawerRef);
   private formBuilder = inject(FormBuilder);
-  private userService = inject(UserService);
-  private notification = inject(NzNotificationService);
 
   ngOnInit(): void {
-    this.patientIdentityForm.patchValue({
-      amka: this.nzData.patientIdentityData.amka,
-      code: this.nzData.patientIdentityData.code,
-      firstName: this.nzData.patientIdentityData.firstName,
-      lastName: this.nzData.patientIdentityData.lastName,
-    });
-  }
+  const identity = this.nzData.patientData.patientIdentity;
+
+  this.lastName.set(identity.lastName as (string | null)[]);
+
+  this.patientIdentityForm.patchValue({
+    amka: identity.amka,
+    code: identity.code,
+    firstName: identity.firstName,
+    lastName: identity.lastName,
+    fullName: this.fullName()
+  });
+
+  identity.lastName.forEach(name => {
+    this.lastNameArray.push(this.formBuilder.control<string | null>(name));
+  });
+}
+
 
   patientIdentityForm = this.formBuilder.group({
-    amka: [''],
-    code: [''],
-    firstName: [''],
-    lastName: [''],
+    amka: this.formBuilder.control<string | null>(null),
+    code: this.formBuilder.control<string | null>(null),
+    firstName: this.formBuilder.control<string | null>(null),
+    lastName: this.formBuilder.array([]),
+    fullName: this.formBuilder.control<string | null>({ value: null, disabled: true }),
   });
+
+
+  addLastName(): void {
+    this.lastNameArray.push(this.formBuilder.control<string | null>(null));
+  }
+
+  removeLastName(index: number): void {
+    this.lastNameArray.removeAt(index);
+  }
+
+  get lastNameArray(): FormArray {
+    return this.patientIdentityForm.get('lastName') as FormArray;
+  }
 
   closeDrawer(): void {
     this.drawerRef.close();
@@ -59,20 +87,25 @@ export class PatientIdentityForm implements OnInit {
 
 
   submitForm(): void {
-    if (this.patientIdentityForm.valid) {
-      const formValues = this.patientIdentityForm.value;
+    if(this.patientIdentityForm.valid) {
+      const formValues = this.patientIdentityForm.value;                          
 
       const updatedPatientIdentity: PatientIdentity = {
-        code: formValues.code ?? '',
-        amka: formValues.amka ?? '',
-        firstName: formValues.firstName ?? '',
-        lastName: formValues.lastName ?? '',
-        status: this.nzData.patientIdentityData.status, 
+        amka: formValues.amka!,
+        code: formValues.code!,
+        firstName: formValues.firstName!,
+        lastName: this.lastNameArray.controls.map(c => c.value),
+        status: this.nzData.patientData.patientIdentity.status
+      }
+
+      const updatedPatient: PatientDto = {
+        id: this.nzData.patientData.id,
+        patientIdentity: updatedPatientIdentity,
+        demographicInfo: this.nzData.patientData.demographicInfo,
+        contactInfo: this.nzData.patientData.contactInfo,
       };
 
-      this.drawerRef.close(updatedPatientIdentity);
+      this.drawerRef.close(updatedPatient);
     }
   }
-
-
 }

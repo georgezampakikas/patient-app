@@ -5,22 +5,24 @@
       "patientIdentity": {
         "amka": "2910930002",
         "code": "000001",
-        "firstName": "Νικόλαοςs",
-        "lastName": "Παπαδόπουλος",
+        "firstName": "Νικόλαος",
+        "lastName": [
+          "Παπαδοπούλου"
+        ],
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "18/03/92",
+        "birthDate": "10/07/25",
         "birthPlace": "Αθήνα",
         "gender": {
-          "id": 1,
-          "name": "Άρρεν"
+          "id": 3,
+          "name": "Άλλο"
         },
         "maritalStatus": {
           "id": 1,
           "name": "Άγαμος/η"
         },
-        "fatherName": "Γεώργιος",
+        "fatherName": "Γεώργιοςs",
         "motherName": "Ελένη",
         "language": "Ελληνική",
         "nationality": {
@@ -38,18 +40,18 @@
       },
       "contactInfo": {
         "phone1TypeId": 3,
-        "phone1": "2101234567",
+        "phone1": "2101234562",
         "phone1Label": null,
         "phone2TypeId": 1,
-        "phone2": "6901234501",
+        "phone2": "6901234505",
         "phone2Label": "Κινητό",
-        "phone3TypeId": 3,
+        "phone3TypeId": 1,
         "phone3": "2101234568",
         "phone3Label": "Εργασία",
         "addressTypeId": 1,
         "addressLabel": "Κατοικία",
         "address": "Πατησίων 45, Αθήνα, 10682",
-        "email": "n.papadopoulos@email.gr"
+        "email": "n.papadopoulos@email.de"
       }
     },
     {
@@ -58,11 +60,13 @@
         "amka": "1508881234",
         "code": "000002",
         "firstName": "Μαρία",
-        "lastName": "Παπαδοπούλου",
+        "lastName": [
+          "Παπαδοπούλου"
+        ],
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "29/10/25",
+        "birthDate": "07/10/25",
         "birthPlace": "Αθήνα",
         "gender": {
           "id": 2,
@@ -109,7 +113,9 @@
       "patientIdentity": {
         "code": "000003",
         "amka": "0307925678",
-        "lastName": "Παπαδόπουλος",
+        "lastName": [
+          "Παπαδόπουλος"
+        ],
         "firstName": "Δημήτριος",
         "status": "Ενεργός"
       },
@@ -161,7 +167,9 @@
       "patientIdentity": {
         "code": "000004",
         "amka": "2201851111",
-        "lastName": "Γεωργίου",
+        "lastName": [
+          "Γεωργίου"
+        ],
         "firstName": "Ελένη",
         "status": "Ενεργός"
       },
@@ -213,7 +221,9 @@
       "patientIdentity": {
         "code": "000005",
         "amka": "1112901122",
-        "lastName": "Γεωργίου",
+        "lastName": [
+          "Γεωργίου"
+        ],
         "firstName": "Κωνσταντίνος",
         "status": "Ενεργός"
       },
@@ -265,7 +275,9 @@
       "patientIdentity": {
         "code": "000006",
         "amka": "0809872233",
-        "lastName": "Κωνσταντίνου",
+        "lastName": [
+          "Κωνσταντίνου"
+        ],
         "firstName": "Σοφία",
         "status": "Ενεργός"
       },
@@ -317,7 +329,9 @@
       "patientIdentity": {
         "code": "000007",
         "amka": "1705913344",
-        "lastName": "Κωνσταντίνου",
+        "lastName": [
+          "Κωνσταντίνου"
+        ],
         "firstName": "Ανδρέας",
         "status": "Ενεργός"
       },
@@ -369,7 +383,9 @@
       "patientIdentity": {
         "code": "000008",
         "amka": "2403894455",
-        "lastName": "Ιωάννου",
+        "lastName": [
+          "Ιωάννου"
+        ],
         "firstName": "Κατερίνα",
         "status": "Ενεργός"
       },
@@ -421,7 +437,9 @@
       "patientIdentity": {
         "code": "000009",
         "amka": "3011865566",
-        "lastName": "Ιωάννου",
+        "lastName": [
+          "Ιωάννου"
+        ],
         "firstName": "Παναγιώτης",
         "status": "Ενεργός"
       },
@@ -473,7 +491,9 @@
       "patientIdentity": {
         "code": "000010",
         "amka": "1402946677",
-        "lastName": "Δημητρίου",
+        "lastName": [
+          "Δημητρίου"
+        ],
         "firstName": "Αναστασία",
         "status": "Ενεργός"
       },
@@ -525,7 +545,9 @@
       "patientIdentity": {
         "code": "000011",
         "amka": "0606887788",
-        "lastName": "Δημητρίου",
+        "lastName": [
+          "Δημητρίου"
+        ],
         "firstName": "Χρήστος",
         "status": "Ενεργός"
       },
@@ -577,7 +599,9 @@
       "patientIdentity": {
         "code": "000012",
         "amka": "1909958899",
-        "lastName": "Νικολάου",
+        "lastName": [
+          "Νικολάου"
+        ],
         "firstName": "Βασιλική",
         "status": "Ενεργός"
       },
@@ -629,7 +653,9 @@
       "patientIdentity": {
         "code": "000013",
         "amka": "2808839900",
-        "lastName": "Νικολάου",
+        "lastName": [
+          "Νικολάου"
+        ],
         "firstName": "Σπυρίδων",
         "status": "Ενεργός"
       },
@@ -681,7 +707,9 @@
       "patientIdentity": {
         "code": "000014",
         "amka": "0104920011",
-        "lastName": "Αθανασίου",
+        "lastName": [
+          "Αθανασίου"
+        ],
         "firstName": "Δέσποινα",
         "status": "Ενεργός"
       },
@@ -733,7 +761,9 @@
       "patientIdentity": {
         "code": "000015",
         "amka": "1207901122",
-        "lastName": "Αθανασίου",
+        "lastName": [
+          "Αθανασίου"
+        ],
         "firstName": "Θεόδωρος",
         "status": "Ενεργός"
       },
@@ -785,7 +815,9 @@
       "patientIdentity": {
         "code": "000016",
         "amka": "2510962233",
-        "lastName": "Παπαγιάννης",
+        "lastName": [
+          "Παπαγιάννης"
+        ],
         "firstName": "Ιωάννης",
         "status": "Ενεργός"
       },
@@ -837,7 +869,9 @@
       "patientIdentity": {
         "code": "000017",
         "amka": "0301873344",
-        "lastName": "Παπαγιάννη",
+        "lastName": [
+          "Παπαγιάννη"
+        ],
         "firstName": "Χριστίνα",
         "status": "Ενεργός"
       },
@@ -889,7 +923,9 @@
       "patientIdentity": {
         "code": "000018",
         "amka": "1611914455",
-        "lastName": "Βασιλείου",
+        "lastName": [
+          "Βασιλείου"
+        ],
         "firstName": "Γεώργιος",
         "status": "Ενεργός"
       },
@@ -942,11 +978,15 @@
         "amka": "2012845566",
         "code": "000019",
         "firstName": "Αικατερίνη",
-        "lastName": "Βασιλείου",
+        "lastName": [
+          "Γεωργίου",
+          "Παπαδοπούλου",
+          "Βασιλείου"
+        ],
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "03/07/92",
+        "birthDate": "07/03/92",
         "birthPlace": "Κιλκίς",
         "gender": {
           "id": 2,
@@ -968,8 +1008,8 @@
           "name": "Δάσκαλος"
         },
         "education": {
-          "id": 5,
-          "name": "Ανώτατη"
+          "id": 2,
+          "name": "Γυμνάσιο"
         }
       },
       "contactInfo": {
@@ -993,7 +1033,9 @@
       "patientIdentity": {
         "code": "000020",
         "amka": "0905936677",
-        "lastName": "Αντωνίου",
+        "lastName": [
+          "Αντωνίου"
+        ],
         "firstName": "Μιχαήλ",
         "status": "Ενεργός"
       },

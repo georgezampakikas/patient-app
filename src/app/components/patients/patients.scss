@@ -24,7 +24,7 @@
 
 .headers {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     max-width: 600px;
@@ -38,7 +38,7 @@
 
 .content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     max-width: 600px;
@@ -46,4 +46,9 @@
     color: #333333;
     opacity: 65%;
     text-align: center;
+}
+
+.flex-column-span {
+    display: flex;
+    flex-direction: column;
 }
