@@ -1,12 +1,14 @@
-import { ChangeDetectorRef, Component, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzTableModule } from "ng-zorro-antd/table";
+
 import { NsAutoHeightTableDirective } from '../../../directives/ns-auto-height-table';
 import { PatientResultTableDto } from '../../../shared/patient-modal';
-import { NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
-import { CommonModule } from '@angular/common';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { NzStatisticModule } from 'ng-zorro-antd/statistic';
-
 
 @Component({
   selector: 'app-test-name-result',

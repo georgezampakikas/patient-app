@@ -8,8 +8,6 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzCardModule} from 'ng-zorro-antd/card';
 
-
-
 import { DrawerComponent } from '../drawer-component/drawer-component';
 import { GeneralInstructions } from "../general-instructions/general-instructions";
 import { LabeledText } from "../labeled-text/labeled-text";

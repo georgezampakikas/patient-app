@@ -1,13 +1,16 @@
+import { CommonModule, formatDate } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { NzTableModule } from "ng-zorro-antd/table";
-import { forkJoin, map, take } from 'rxjs';
-import { UserService } from '../../shared/user-service';
 import { ActivatedRoute } from '@angular/router';
+
+import { NzTableModule } from "ng-zorro-antd/table";
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+
+import { forkJoin, map, take } from 'rxjs';
+
+import { UserService } from '../../shared/user-service';
 import { PatientResultTableDto } from '../../shared/patient-modal';
 import { NsAutoHeightTableDirective } from '../../directives/ns-auto-height-table';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { TestNameResult } from './test-name-result/test-name-result';
-import { CommonModule, formatDate } from '@angular/common';
 
 
 @Component({

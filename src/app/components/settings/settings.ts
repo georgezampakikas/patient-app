@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 
-import { NzTableComponent, NzTableModule } from "ng-zorro-antd/table";
+import { NzTableModule } from "ng-zorro-antd/table";
 
-import { map, take } from 'rxjs';
+import { take } from 'rxjs';
 
 import { UserService } from '../../shared/user-service';
 import { LabTestDto } from '../../shared/patient-modal';

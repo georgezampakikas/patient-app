@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { NzTableModule } from 'ng-zorro-antd/table';
+
 import { NsAutoHeightTableDirective } from "../../directives/ns-auto-height-table";
 
 @Component({

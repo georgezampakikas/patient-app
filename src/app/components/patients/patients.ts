@@ -1,17 +1,16 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
-import { UserService } from '../../shared/user-service';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap, take } from 'rxjs';
-import { PatientDto, PatientV2Dto } from '../../shared/patient-modal';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { NzEmptyComponent } from "ng-zorro-antd/empty";
 
-
+import { UserService } from '../../shared/user-service';
 
 
 @Component({

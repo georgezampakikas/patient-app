@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { Page } from "../page/page";
-import { RouterOutlet } from '@angular/router';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({

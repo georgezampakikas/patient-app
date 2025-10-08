@@ -7,10 +7,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { PatientDto, PatientIdentity } from '../../shared/patient-modal';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { id } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-patient-identity-form',

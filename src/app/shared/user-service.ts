@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
-import { map, Observable, switchMap, take } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { 
   AddressTypeDto,
@@ -11,10 +11,8 @@ import {
   LabTestV2Dto, 
   MaritalStatusDto, 
   NationalityDto, 
-  PatientDto, 
-  PatientIdentity, 
-  PatientTestResultDto, 
-  PatientV2Dto, 
+  PatientDto,  
+  PatientTestResultDto,  
   PhoneTypeDto, 
   ProfessionDto 
 } from './patient-modal';

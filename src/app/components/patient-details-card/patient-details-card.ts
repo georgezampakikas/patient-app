@@ -1,5 +1,4 @@
-import { Component, computed, effect, inject, input, OnInit, resource } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, computed, inject, input, OnInit } from '@angular/core';
 
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -7,14 +6,9 @@ import { NzButtonModule } from "ng-zorro-antd/button";
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
-
-import { take } from 'rxjs';
 
 import { LabeledTextDetails } from "../labeled-text-details/labeled-text-details";
 import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.modal';
-import { UserService } from '../../shared/user-service';
-import { PatientDto } from '../../shared/patient-modal';
 import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 
 
