@@ -45,7 +45,7 @@ export class PatientDetails implements OnInit{
 
   ngOnInit(): void {
     this.patientService.getPatientData(this.patientId).pipe(take(1)).subscribe({
-      next: p => this.patientService.selectedPatient = p,
+      next: p => this.patientService.selectedPatient.set(p),
     });
   }
 

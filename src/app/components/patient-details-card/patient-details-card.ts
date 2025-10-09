@@ -30,19 +30,12 @@ import { take } from 'rxjs';
   templateUrl: './patient-details-card.html',
   styleUrl: './patient-details-card.scss'
 })
-export class PatientDetailsCard implements OnInit {
+export class PatientDetailsCard  {
   patientId = input.required<number>();
 
   private userService = inject(UserService);
-  // private notification = inject(NzNotificationService);
 
   patientData = this.userService.patientData;
-
-  ngOnInit(): void {
-    this.userService.getPatientData(this.patientId()).pipe(take(1)).subscribe();
-    // this.patientData.set(this.userService.selectedPatient);
-
-  }
 
 
   personalInfo = computed<LabeledTextInput>(() => ({

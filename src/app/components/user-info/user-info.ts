@@ -35,7 +35,8 @@ import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-det
 export class UserInfo implements OnInit {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
-  patient?: PatientDto | null;
+  // patient?: PatientDto | null;
+  patient = signal<PatientDto | null>(null);
   drawerWidth = window.innerWidth * 0.75;
 
   private userService = inject(UserService);
@@ -58,33 +59,33 @@ export class UserInfo implements OnInit {
   }
 
   loadLabeledText(): void {
-      this.userService.getPatientData(this.patientId)
-      .pipe(take(1))
-      .subscribe({
-        next: (res: PatientDto) => {
-          this.patient = res;
+      // this.userService.getPatientData(this.patientId)
+      // .pipe(take(1))
+      // .subscribe({
+      //   next: (res: PatientDto) => {
+      //     this.patient = res;
 
-          this.firstName.set(this.patient.patientIdentity.firstName!);
-          this.lastName.set(this.patient.patientIdentity.lastName!);
-        },
-        error: err => {
-          this.notification.error('Error', 'loadLabeledData error');
-          console.log(err);
-        },
+      //     this.firstName.set(this.patient.patientIdentity.firstName!);
+      //     this.lastName.set(this.patient.patientIdentity.lastName!);
+      //   },
+      //   error: err => {
+      //     this.notification.error('Error', 'loadLabeledData error');
+      //     console.log(err);
+      //   },
         
-      });
+      // });
 
-    // this.patient = this.userService.selectedPatient;
+    this.patient = this.userService.selectedPatient;
 
-    // this.firstName.set(this.patient!.patientIdentity.firstName);
-    // this.lastName.set(this.patient!.patientIdentity.lastName);
+    this.firstName.set(this.patient()!.patientIdentity.firstName);
+    this.lastName.set(this.patient()!.patientIdentity.lastName);
   }
 
     openContactInfoDrawer(): void {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Στοιχείων Επικοινωνίας',
       nzContent: ContactInfoForm,
-      nzData: { patientData: this.patient },
+      nzData: { patientData: this.patient() },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '40%'
@@ -94,7 +95,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.userService.getPatientData(this.patientId);
+          this.userService.updatePatient(this.patientId);
        }); 
       }
     });
@@ -104,7 +105,7 @@ export class UserInfo implements OnInit {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
       nzContent: DemographicInfoForm,
-      nzData: { patientData: this.patient },
+      nzData: { patientData: this.patient() },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '30%'
@@ -114,7 +115,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.userService.getPatientData(this.patientId);
+          this.userService.updatePatient(this.patientId);
        }); 
       }
     });
@@ -124,7 +125,7 @@ export class UserInfo implements OnInit {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Στοιχείων Ταυτότητας',
       nzContent: PatientIdentityForm,
-      nzData: { patientData: this.patient },
+      nzData: { patientData: this.patient() },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '30%'
@@ -134,7 +135,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.userService.getPatientData(this.patientId);
+          this.userService.updatePatient(this.patientId);
        }); 
       }
     });

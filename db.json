@@ -985,15 +985,15 @@
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "07/03/92",
+        "birthDate": "03/07/92",
         "birthPlace": "Κιλκίς",
         "gender": {
           "id": 2,
           "name": "Θήλυ"
         },
         "maritalStatus": {
-          "id": 2,
-          "name": "Έγγαμος/η"
+          "id": 5,
+          "name": "Σε συμβίωση"
         },
         "fatherName": "Ιωάννης",
         "motherName": "Βασιλική",
@@ -1013,7 +1013,7 @@
       },
       "contactInfo": {
         "phone1TypeId": 1,
-        "phone1": "2341890124",
+        "phone1": "2341890123",
         "phone1Label": null,
         "phone2TypeId": 1,
         "phone2": "6901234519",

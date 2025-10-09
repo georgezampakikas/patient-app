@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 
-import { catchError, map, Observable, of, retry, tap, throwError } from 'rxjs';
+import { catchError, map, Observable, take, tap, throwError } from 'rxjs';
 
 import { 
   AddressTypeDto,
@@ -27,7 +27,8 @@ export class UserService {
 
   private httpClient = inject(HttpClient);
 
-  selectedPatient: PatientDto | null = null;
+  selectedPatient = signal<PatientDto | null>(null);
+
 
   handleError(error: unknown): Observable<never> {
     console.log('Error handled from handleError method user');
@@ -35,10 +36,22 @@ export class UserService {
     return throwError(() => error);
   }
 
+  updatePatient(patientId: number): void {
+    this.getPatientData(patientId).pipe(take(1)).subscribe({
+      next: p => {
+        this.selectedPatient.set(p);
+        this.patientData.set(p);
+      },
+    });
+  }
+
   getPatientData(id: number): Observable<PatientDto> {
     return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`)
     .pipe(
-      tap((res) => this.patientData.set(res)),
+      // tap((res) => {
+      //   this.patientData.set(res);
+      //   this.selectedPatient.set(res);
+      // }),
       catchError(this.handleError));
   }
 
@@ -47,7 +60,14 @@ export class UserService {
   }
 
   putPatient(id: number, updatedPatient: PatientDto): Observable<PatientDto> {
-    return this.httpClient.put<PatientDto>(`${this.url}/patients/${id}`, updatedPatient);
+    return this.httpClient.put<PatientDto>(`${this.url}/patients/${id}`, updatedPatient)
+    .pipe(
+      tap((res) => {
+        this.patientData.set(res);
+        this.selectedPatient.set(res);
+      }
+    )
+  )
   }
 
   getGenders(): Observable<GenderDto[]> {

@@ -1,10 +1,10 @@
 <div class="user-info-wrapper">
     <nz-card class="cards" [nzTitle]="patientIdentity">
         <div class="labeled-text-container-identity">
-            <app-labeled-text-user-info label="Κωδικός" [text]="patient?.patientIdentity?.code" />
+            <app-labeled-text-user-info label="Κωδικός" [text]="patient()?.patientIdentity?.code" />
             <app-labeled-text-user-info class = "span-2" label="Ονοματεπώνυμο" [text]="fullName()" />
-            <app-labeled-text-user-info label="Κατάσταση" [text]="patient?.patientIdentity?.status" />
-            <app-labeled-text-user-info label="ΑΜΚΑ" [text]="patient?.patientIdentity?.amka" />
+            <app-labeled-text-user-info label="Κατάσταση" [text]="patient()?.patientIdentity?.status" />
+            <app-labeled-text-user-info label="ΑΜΚΑ" [text]="patient()?.patientIdentity?.amka" />
         </div>
 
     </nz-card>
@@ -20,16 +20,16 @@
 
     <nz-card class="cards" [nzTitle]="demographicInfo">
         <div class="labeled-text-container-demographic">
-            <app-labeled-text-user-info label="Ημερομηνία Γέννησης" [text]="patient?.demographicInfo?.birthDate" />
-            <app-labeled-text-user-info label="Τόπος Γέννησης" [text]="patient?.demographicInfo?.birthPlace" />
-            <app-labeled-text-user-info label="Φύλο" [text]="patient?.demographicInfo?.gender?.name" />
-            <app-labeled-text-user-info label="Οικογενειακή Κατάσταση" [text]="patient?.demographicInfo?.maritalStatus?.name" />
-            <app-labeled-text-user-info label="Όνομα Πατρός" [text]="patient?.demographicInfo?.fatherName" />     
-            <app-labeled-text-user-info label="Όνομα Μητρός" [text]="patient?.demographicInfo?.motherName" />
-            <app-labeled-text-user-info label="Γλώσσα" [text]="patient?.demographicInfo?.language" />
-            <app-labeled-text-user-info label="Εθνικότητα" [text]="patient?.demographicInfo?.nationality?.name" />
-            <app-labeled-text-user-info label="Επίπεδο Εκπαίδευσης" [text]="patient?.demographicInfo?.education?.name" />           
-            <app-labeled-text-user-info label="Επάγγελμα" [text]="patient?.demographicInfo?.profession?.name" />           
+            <app-labeled-text-user-info label="Ημερομηνία Γέννησης" [text]="patient()?.demographicInfo?.birthDate" />
+            <app-labeled-text-user-info label="Τόπος Γέννησης" [text]="patient()?.demographicInfo?.birthPlace" />
+            <app-labeled-text-user-info label="Φύλο" [text]="patient()?.demographicInfo?.gender?.name" />
+            <app-labeled-text-user-info label="Οικογενειακή Κατάσταση" [text]="patient()?.demographicInfo?.maritalStatus?.name" />
+            <app-labeled-text-user-info label="Όνομα Πατρός" [text]="patient()?.demographicInfo?.fatherName" />     
+            <app-labeled-text-user-info label="Όνομα Μητρός" [text]="patient()?.demographicInfo?.motherName" />
+            <app-labeled-text-user-info label="Γλώσσα" [text]="patient()?.demographicInfo?.language" />
+            <app-labeled-text-user-info label="Εθνικότητα" [text]="patient()?.demographicInfo?.nationality?.name" />
+            <app-labeled-text-user-info label="Επίπεδο Εκπαίδευσης" [text]="patient()?.demographicInfo?.education?.name" />           
+            <app-labeled-text-user-info label="Επάγγελμα" [text]="patient()?.demographicInfo?.profession?.name" />           
         </div>
     </nz-card>
 
@@ -44,11 +44,11 @@
 
     <nz-card class="cards" [nzTitle]="contactInfo">
         <div class="labeled-text-container-contact">
-            <app-labeled-text-user-info [isUrl]="true" class="" label="Οικίας" [text]="patient?.contactInfo?.phone1" />
-            <app-labeled-text-user-info [isUrl]="true" label="Κινητό" [text]="patient?.contactInfo?.phone2" />
-            <app-labeled-text-user-info [isUrl]="true" label="Εργασίας" [text]="patient?.contactInfo?.phone3" />
-            <app-labeled-text-user-info [isUrl]="true" class="span-2" label="Διεύθυνση" [text]="patient?.contactInfo?.address" />
-            <app-labeled-text-user-info [isUrl]="true" label="Email" [text]="patient?.contactInfo?.email" />  
+            <app-labeled-text-user-info [isUrl]="true" class="" label="Οικίας" [text]="patient()?.contactInfo?.phone1" />
+            <app-labeled-text-user-info [isUrl]="true" label="Κινητό" [text]="patient()?.contactInfo?.phone2" />
+            <app-labeled-text-user-info [isUrl]="true" label="Εργασίας" [text]="patient()?.contactInfo?.phone3" />
+            <app-labeled-text-user-info [isUrl]="true" class="span-2" label="Διεύθυνση" [text]="patient()?.contactInfo?.address" />
+            <app-labeled-text-user-info [isUrl]="true" label="Email" [text]="patient()?.contactInfo?.email" />  
         </div>
     </nz-card>    
 
