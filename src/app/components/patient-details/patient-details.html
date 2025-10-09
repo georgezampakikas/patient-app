@@ -1,59 +1,63 @@
-<div class="patient-details-container">
-    <app-patient-details-card [patientId]="patientId"  />
+@if (this.patientService.selectedPatient) {
+    <div class="patient-details-container">
+        <app-patient-details-card [patientId]="patientId"  />
 
-    <nz-tabs class="tabs">
-        <nz-tab nzTitle="Σταθερά Στοιχεία">
-            <app-user-info />
-        </nz-tab>
-        <nz-tab nzTitle="Κάλυψη">Content</nz-tab>
-        <nz-tab nzTitle="Επαφές">Content</nz-tab>
-        <nz-tab nzTitle="Έγγραφα">Content</nz-tab>
-        <nz-tab nzTitle="Εργαστηριακά">
-            <app-patient-lab-results-table />
-        </nz-tab>    
-        <nz-tab nzTitle="Παραγγελία Εργαστηριακών">
-            <div class="lab-tests-container">
-                <div>
-                    <button 
-                        class="button"
-                        nz-button 
-                        nzType="default"
-                        (click)="labTestsDrawer()"
-                    >
-                        Προσθήκη εξετάσεων
-                    </button>                    
-                </div>
+        <nz-tabs class="tabs">
+            <nz-tab nzTitle="Σταθερά Στοιχεία">
+                <app-user-info />
+            </nz-tab>
+            <nz-tab nzTitle="Κάλυψη">Content</nz-tab>
+            <nz-tab nzTitle="Επαφές">Content</nz-tab>
+            <nz-tab nzTitle="Έγγραφα">Content</nz-tab>
+            <nz-tab nzTitle="Εργαστηριακά">
+                <app-patient-lab-results-table />
+            </nz-tab>    
+            <nz-tab nzTitle="Παραγγελία Εργαστηριακών">
+                <div class="lab-tests-container">
+                    <div>
+                        <button 
+                            class="button"
+                            nz-button 
+                            nzType="default"
+                            (click)="labTestsDrawer()"
+                        >
+                            Προσθήκη εξετάσεων
+                        </button>                    
+                    </div>
 
-                @if(testsTable.length > 0) {
-                    <nz-table 
-                        class="table"
-                        [nzData]="testsTable"
-                        nzShowPagination="false"
-                        [appNsAutoHeightTable]=""
-                    >
-                        <thead>
-                            <tr>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Unit</th>
-                                <th>Normal Values</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for(test of testsTable; track test.id) {
+                    @if(testsTable.length > 0) {
+                        <nz-table 
+                            class="table"
+                            [nzData]="testsTable"
+                            nzShowPagination="false"
+                            [appNsAutoHeightTable]=""
+                        >
+                            <thead>
                                 <tr>
-                                    <td>{{ test.code }}</td>
-                                    <td>{{ test.name }}</td>
-                                    <td>{{ test.unit }}</td>
-                                    <td>{{ test.normalValues }}</td>
-                                    <td>{{ test.category }}</td>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Unit</th>
+                                    <th>Normal Values</th>
+                                    <th>Category</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </nz-table>
-                }
-            </div>
-        </nz-tab>  
-    </nz-tabs>
-</div>
+                            </thead>
+                            <tbody>
+                                @for(test of testsTable; track test.id) {
+                                    <tr>
+                                        <td>{{ test.code }}</td>
+                                        <td>{{ test.name }}</td>
+                                        <td>{{ test.unit }}</td>
+                                        <td>{{ test.normalValues }}</td>
+                                        <td>{{ test.category }}</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </nz-table>
+                    }
+                </div>
+            </nz-tab>  
+        </nz-tabs>
+    </div>
+} @else {
+    <nz-empty></nz-empty>
+}

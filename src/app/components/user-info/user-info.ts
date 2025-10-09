@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit, signal, TemplateRef, ViewChild } from '@angular/core';
+import { Component, computed, EventEmitter, inject, OnInit, Output, output, signal, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NzCardModule } from "ng-zorro-antd/card";
@@ -73,6 +73,11 @@ export class UserInfo implements OnInit {
         },
         
       });
+
+    // this.patient = this.userService.selectedPatient;
+
+    // this.firstName.set(this.patient!.patientIdentity.firstName);
+    // this.lastName.set(this.patient!.patientIdentity.lastName);
   }
 
     openContactInfoDrawer(): void {
@@ -89,7 +94,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.reloadService.reloadPatientDetailsCard(this.patientId);
+          this.userService.getPatientData(this.patientId);
        }); 
       }
     });
@@ -109,7 +114,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.reloadService.reloadPatientDetailsCard(this.patientId);
+          this.userService.getPatientData(this.patientId);
        }); 
       }
     });
@@ -129,7 +134,7 @@ export class UserInfo implements OnInit {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
           this.loadLabeledText();
-          this.reloadService.reloadPatientDetailsCard(this.patientId);
+          this.userService.getPatientData(this.patientId);
        }); 
       }
     });

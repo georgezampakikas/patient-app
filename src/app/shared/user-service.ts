@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of, retry, tap, throwError } from 'rxjs';
 
 import { 
   AddressTypeDto,
@@ -21,12 +21,25 @@ import {
   providedIn: 'root'
 })
 export class UserService {
+  patientData =  signal<PatientDto | null>(null);
+
   private readonly url = "http://localhost:3000";
 
   private httpClient = inject(HttpClient);
 
+  selectedPatient: PatientDto | null = null;
+
+  handleError(error: unknown): Observable<never> {
+    console.log('Error handled from handleError method user');
+    // return new Error('New error returned');
+    return throwError(() => error);
+  }
+
   getPatientData(id: number): Observable<PatientDto> {
-    return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`);
+    return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`)
+    .pipe(
+      tap((res) => this.patientData.set(res)),
+      catchError(this.handleError));
   }
 
   getPatientsDto(): Observable<PatientDto[]> {

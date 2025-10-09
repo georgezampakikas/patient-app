@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, OnInit } from '@angular/core';
+import { Component, computed, EventEmitter, inject, input, OnInit, Output, output } from '@angular/core';
 
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -10,6 +10,9 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { LabeledTextDetails } from "../labeled-text-details/labeled-text-details";
 import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.modal';
 import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { UserService } from '../../shared/user-service';
+import { take } from 'rxjs';
 
 
 
@@ -30,13 +33,17 @@ import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-det
 export class PatientDetailsCard implements OnInit {
   patientId = input.required<number>();
 
-  private reloadService = inject(ReloadPatientDetailsCardService);
+  private userService = inject(UserService);
+  // private notification = inject(NzNotificationService);
 
-  patientData = this.reloadService.patientData;
+  patientData = this.userService.patientData;
 
   ngOnInit(): void {
-    this.reloadService.reloadPatientDetailsCard(this.patientId());
+    this.userService.getPatientData(this.patientId()).pipe(take(1)).subscribe();
+    // this.patientData.set(this.userService.selectedPatient);
+
   }
+
 
   personalInfo = computed<LabeledTextInput>(() => ({
     label: 'AMKA',
