@@ -1,4 +1,4 @@
-import { Component, computed, effect, EventEmitter, inject, OnInit, Output, output, signal, TemplateRef, ViewChild } from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, OnDestroy, OnInit, Output, output, signal, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NzCardModule } from "ng-zorro-antd/card";
@@ -8,7 +8,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDrawerModule, NzDrawerService } from 'ng-zorro-antd/drawer';
 
-import { take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 
 import { UserService } from '../../shared/user-service';
 import { PatientDto } from '../../shared/patient-modal';
@@ -31,11 +31,11 @@ import { ContactInfoForm } from '../contact-info-form/contact-info-form';
   templateUrl: './user-info.html',
   styleUrl: './user-info.scss',
 })
-export class UserInfo {
+export class UserInfo implements OnInit, OnDestroy {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
-  // patient?: PatientDto | null;
-  patient = signal<PatientDto | null>(null);
+
+  patient: PatientDto | null = null;
   drawerWidth = window.innerWidth * 0.75;
 
   private userService = inject(UserService);
@@ -45,28 +45,33 @@ export class UserInfo {
   
   readonly patientId = Number(this.route.snapshot.paramMap.get('id'));
 
-  firstName = signal<string>('');
-  lastName = signal<(string | null)[]>([]);
+  firstName: string = '';
+  lastName: (string | null)[] = [];
+  fullName: string = '';
 
-  fullName = computed(() => {
-    return this.lastName().join(' ') + ' ' + this.firstName();
-  });
+  private subscriptions = new Subscription();
 
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.userService.selectedPatient$.subscribe(p => {
+        this.patient  = p;
 
-  constructor() {
-    effect(() => {
-      this.patient.set(this.userService.selectedPatient());
+        this.firstName = p!.patientIdentity.firstName;
+        this.lastName = p!.patientIdentity.lastName;
+        this.fullName = this.lastName.join(' ') + ' ' + this.firstName;
+      })
+    );
+  }
 
-      this.firstName.set(this.patient()!.patientIdentity.firstName);
-      this.lastName.set(this.patient()!.patientIdentity.lastName);      
-    });
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
     openContactInfoDrawer(): void {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Στοιχείων Επικοινωνίας',
       nzContent: ContactInfoForm,
-      nzData: { patientData: this.patient() },
+      nzData: { patientData: this.patient },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '40%'
@@ -85,7 +90,7 @@ export class UserInfo {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
       nzContent: DemographicInfoForm,
-      nzData: { patientData: this.patient() },
+      nzData: { patientData: this.patient },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '30%'
@@ -104,7 +109,7 @@ export class UserInfo {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Στοιχείων Ταυτότητας',
       nzContent: PatientIdentityForm,
-      nzData: { patientData: this.patient() },
+      nzData: { patientData: this.patient },
       nzMaskClosable: false,
       nzClosable: false,
       nzWidth: '30%'

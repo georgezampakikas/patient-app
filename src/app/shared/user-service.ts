@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 
-import { catchError, map, Observable, take, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, take, tap, throwError } from 'rxjs';
 
 import { 
   AddressTypeDto,
@@ -25,8 +25,8 @@ export class UserService {
 
   private httpClient = inject(HttpClient);
 
-  selectedPatient = signal<PatientDto | null>(null);
-
+  private selectedPatientSubject = new BehaviorSubject<PatientDto | null>(null);
+  selectedPatient$: Observable<PatientDto | null> = this.selectedPatientSubject.asObservable();
 
   handleError(error: unknown): Observable<never> {
     console.log('Error handled from handleError method user');
@@ -37,7 +37,7 @@ export class UserService {
   updatePatient(patientId: number): void {
     this.getPatientData(patientId).pipe(take(1)).subscribe({
       next: p => {
-        this.selectedPatient.set(p);
+        this.selectedPatientSubject.next(p);
       },
     });
   }

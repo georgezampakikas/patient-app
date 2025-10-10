@@ -985,7 +985,7 @@
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "03/07/92",
+        "birthDate": "15/07/92",
         "birthPlace": "Κιλκίς",
         "gender": {
           "id": 2,
@@ -1013,7 +1013,7 @@
       },
       "contactInfo": {
         "phone1TypeId": 1,
-        "phone1": "2341890123",
+        "phone1": "2341890122",
         "phone1Label": null,
         "phone2TypeId": 1,
         "phone2": "6901234519",
@@ -1024,7 +1024,7 @@
         "addressTypeId": 1,
         "addressLabel": "Μόνιμη κατοικία",
         "address": "Καπέτα Γεωργίου 56, Κιλκίς, 61100",
-        "email": "a.vasileiou@email.gr"
+        "email": "a.vasileious@email.gr"
       }
     },
     {

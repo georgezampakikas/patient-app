@@ -1,4 +1,4 @@
-import { Component, computed, effect, EventEmitter, inject, input, OnInit, Output, output, signal } from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, input, OnDestroy, OnInit, Output, output, signal } from '@angular/core';
 
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -11,7 +11,7 @@ import { LabeledTextDetails } from "../labeled-text-details/labeled-text-details
 import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserService } from '../../shared/user-service';
-import { take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 import { PatientDto } from '../../shared/patient-modal';
 
 
@@ -30,64 +30,114 @@ import { PatientDto } from '../../shared/patient-modal';
   templateUrl: './patient-details-card.html',
   styleUrl: './patient-details-card.scss'
 })
-export class PatientDetailsCard  {
+export class PatientDetailsCard implements OnInit, OnDestroy {
   patientId = input.required<number>();
 
-  patientData = signal<PatientDto | null>(null);
+  patientData: PatientDto | null = null; 
 
   private userService = inject(UserService);
 
-  constructor() {
-    effect(() => {
-      this.patientData.set(this.userService.selectedPatient());
-    });
+  private subscriptions = new Subscription();
+
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.userService.selectedPatient$.subscribe(p => {
+        this.patientData = p;
+
+        this.personalInfo = {
+          label: 'AMKA',
+          text:  this.patientData?.patientIdentity.amka ?? '',
+          icon: 'idcard',
+          type: 'text',    
+        }; 
+
+        this.fathersName = {
+          label: 'Όνομα Πατρός:',
+          text:  this.patientData?.demographicInfo.fatherName ?? '',
+          icon: 'user',
+          type: 'text', 
+        }; 
+
+        this.emergencyCall = {
+          label:  'Επαφή Άμεσης Ανάγκης:',
+          text: this.patientData?.demographicInfo.fatherName ?? '',
+          icon: 'star',
+          type: 'text',   
+        }; 
+
+
+        this.contact = {
+          label: 'Οικίας',
+          text:  this.patientData?.contactInfo.phone1 ?? '',
+          icon: 'phone',
+          type: 'telephone',
+        }; 
+
+
+        this.email = {
+          label: 'Email:',
+          text:  this.patientData?.contactInfo.email ?? '',
+          icon: 'mail',
+          type: 'url',
+        }; 
+
+
+        this.address = {
+          label: 'Διεύθυνση:',
+          text:  this.patientData?.contactInfo.address ?? '',
+          icon: 'environment',
+          type: 'url',  
+        }; 
+      })
+    );
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 
-
-  personalInfo = computed<LabeledTextInput>(() => ({
+  personalInfo: LabeledTextInput = {
     label: 'AMKA',
-    text:  this.patientData()?.patientIdentity.amka ?? '',
+    text:  this.patientData?.patientIdentity.amka ?? '',
     icon: 'idcard',
     type: 'text',    
-  })); 
+  }; 
 
-  fathersName = computed<LabeledTextInput>(() => ({
+  fathersName: LabeledTextInput = {
     label: 'Όνομα Πατρός:',
-    text:  this.patientData()?.demographicInfo.fatherName ?? '',
+    text:  this.patientData?.demographicInfo.fatherName ?? '',
     icon: 'user',
     type: 'text', 
-  })); 
+  }; 
 
-  emergencyCall = computed<LabeledTextInput>(() => ({
+  emergencyCall: LabeledTextInput = {
     label:  'Επαφή Άμεσης Ανάγκης:',
-    text: this.patientData()?.demographicInfo.fatherName ?? '',
+    text: this.patientData?.demographicInfo.fatherName ?? '',
     icon: 'star',
     type: 'text',   
-  })); 
+  }; 
 
 
-  contact = computed<LabeledTextInput>(() => ({
+  contact: LabeledTextInput = {
     label: 'Οικίας',
-    text:  this.patientData()?.contactInfo.phone1 ?? '',
+    text:  this.patientData?.contactInfo.phone1 ?? '',
     icon: 'phone',
     type: 'telephone',
-  })); 
+  }; 
 
 
-  email = computed<LabeledTextInput>(() => ({
+  email: LabeledTextInput = {
     label: 'Email:',
-    text:  this.patientData()?.contactInfo.email ?? '',
+    text:  this.patientData?.contactInfo.email ?? '',
     icon: 'mail',
     type: 'url',
-  })); 
+  }; 
 
 
-  address = computed<LabeledTextInput>(() => ({
+  address: LabeledTextInput = {
     label: 'Διεύθυνση:',
-    text:  this.patientData()?.contactInfo.address ?? '',
+    text:  this.patientData?.contactInfo.address ?? '',
     icon: 'environment',
     type: 'url',  
-  })); 
-
+  }; 
 }

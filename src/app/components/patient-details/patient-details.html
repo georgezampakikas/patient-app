@@ -1,4 +1,4 @@
-@if (this.patientService.selectedPatient()) {
+@if (this.patientService.selectedPatient$) {
     <div class="patient-details-container">
         <app-patient-details-card [patientId]="patientId"  />
 

@@ -9,41 +9,41 @@
         </div>
 
         <div class="user-name-container">
-            <div class="user-name">{{ patientData()?.patientIdentity?.firstName }}</div>
+            <div class="user-name">{{ patientData?.patientIdentity?.firstName }}</div>
             <div>
                 <nz-icon class="lock-icon" nzType="lock" nzTheme="outline" />
             </div>
         </div>
 
         <div class="user-details">
-            <div class="user-details-item">{{ patientData()?.demographicInfo?.birthDate }}</div>
+            <div class="user-details-item">{{ patientData?.demographicInfo?.birthDate }}</div>
             <div class="user-details-item">
                 <nz-icon nzType="man" nzTheme="outline" />        
             </div>
-            <div class="user-details-item">{{ patientData()?.demographicInfo?.gender?.name }}</div>
-            <div class="user-details-item">{{ patientData()?.patientIdentity?.code }}</div>
+            <div class="user-details-item">{{ patientData?.demographicInfo?.gender?.name }}</div>
+            <div class="user-details-item">{{ patientData?.patientIdentity?.code }}</div>
         </div>        
     </div>
 
     <nz-divider nzSize="large"></nz-divider>
         @if(
-            personalInfo() &&
-            fathersName() &&
-            emergencyCall() &&
-            contact() &&
-            email() &&
-            address()
+            personalInfo &&
+            fathersName &&
+            emergencyCall &&
+            contact &&
+            email &&
+            address
         ) {
             <div class="labeled-text-container">
                 <div class="custom-header-2">Προσωπικά Στοιχεία</div>
                 <app-labeled-text-details 
-                    [patientData]="personalInfo()" 
+                    [patientData]="personalInfo" 
                 />
                 <app-labeled-text-details 
-                    [patientData]="fathersName()" 
+                    [patientData]="fathersName" 
                 />
                 <app-labeled-text-details 
-                    [patientData]="emergencyCall()" 
+                    [patientData]="emergencyCall" 
                 />        
             </div>
 
@@ -53,13 +53,13 @@
                 <div class="custom-header-2">Στοιχεία Επικοινωνίας</div>
                 
                 <app-labeled-text-details 
-                    [patientData]="contact()" 
+                    [patientData]="contact" 
                 />
                 <app-labeled-text-details 
-                    [patientData]="email()" 
+                    [patientData]="email" 
                 />
                 <app-labeled-text-details 
-                    [patientData]="address()" 
+                    [patientData]="address" 
                 />        
             </div>
         }
