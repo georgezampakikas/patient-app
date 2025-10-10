@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, inject, OnInit, Output, output, signal, TemplateRef, ViewChild } from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, OnInit, Output, output, signal, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NzCardModule } from "ng-zorro-antd/card";
@@ -16,7 +16,6 @@ import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
 import { ContactInfoForm } from '../contact-info-form/contact-info-form';
-import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 
 @Component({
   selector: 'app-user-info',
@@ -32,7 +31,7 @@ import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-det
   templateUrl: './user-info.html',
   styleUrl: './user-info.scss',
 })
-export class UserInfo implements OnInit {
+export class UserInfo {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
   // patient?: PatientDto | null;
@@ -43,7 +42,6 @@ export class UserInfo implements OnInit {
   private drawerService = inject(NzDrawerService);
   private notification = inject(NzNotificationService);
   private route = inject(ActivatedRoute);
-  reloadService = inject(ReloadPatientDetailsCardService);
   
   readonly patientId = Number(this.route.snapshot.paramMap.get('id'));
 
@@ -54,31 +52,14 @@ export class UserInfo implements OnInit {
     return this.lastName().join(' ') + ' ' + this.firstName();
   });
 
-  ngOnInit(): void {
-    this.loadLabeledText();
-  }
 
-  loadLabeledText(): void {
-      // this.userService.getPatientData(this.patientId)
-      // .pipe(take(1))
-      // .subscribe({
-      //   next: (res: PatientDto) => {
-      //     this.patient = res;
+  constructor() {
+    effect(() => {
+      this.patient.set(this.userService.selectedPatient());
 
-      //     this.firstName.set(this.patient.patientIdentity.firstName!);
-      //     this.lastName.set(this.patient.patientIdentity.lastName!);
-      //   },
-      //   error: err => {
-      //     this.notification.error('Error', 'loadLabeledData error');
-      //     console.log(err);
-      //   },
-        
-      // });
-
-    this.patient = this.userService.selectedPatient;
-
-    this.firstName.set(this.patient()!.patientIdentity.firstName);
-    this.lastName.set(this.patient()!.patientIdentity.lastName);
+      this.firstName.set(this.patient()!.patientIdentity.firstName);
+      this.lastName.set(this.patient()!.patientIdentity.lastName);      
+    });
   }
 
     openContactInfoDrawer(): void {
@@ -94,7 +75,6 @@ export class UserInfo implements OnInit {
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
-          this.loadLabeledText();
           this.userService.updatePatient(this.patientId);
        }); 
       }
@@ -114,7 +94,6 @@ export class UserInfo implements OnInit {
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
-          this.loadLabeledText();
           this.userService.updatePatient(this.patientId);
        }); 
       }
@@ -134,7 +113,6 @@ export class UserInfo implements OnInit {
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe(() => {
-          this.loadLabeledText();
           this.userService.updatePatient(this.patientId);
        }); 
       }

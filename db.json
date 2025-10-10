@@ -976,7 +976,7 @@
     {
       "id": "19",
       "patientIdentity": {
-        "amka": "2012845563",
+        "amka": "2012845566",
         "code": "000019",
         "firstName": "Αικατερίνη",
         "lastName": [
@@ -992,8 +992,8 @@
           "name": "Θήλυ"
         },
         "maritalStatus": {
-          "id": 5,
-          "name": "Σε συμβίωση"
+          "id": 3,
+          "name": "Διαζευγμένος/η"
         },
         "fatherName": "Ιωάννης",
         "motherName": "Βασιλική",
@@ -1007,8 +1007,8 @@
           "name": "Δάσκαλος"
         },
         "education": {
-          "id": 2,
-          "name": "Γυμνάσιο"
+          "id": 6,
+          "name": "Μεταπτυχιακό"
         }
       },
       "contactInfo": {

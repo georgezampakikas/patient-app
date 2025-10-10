@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, inject, input, OnInit, Output, output } from '@angular/core';
+import { Component, computed, effect, EventEmitter, inject, input, OnInit, Output, output, signal } from '@angular/core';
 
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -9,10 +9,10 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 
 import { LabeledTextDetails } from "../labeled-text-details/labeled-text-details";
 import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.modal';
-import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserService } from '../../shared/user-service';
 import { take } from 'rxjs';
+import { PatientDto } from '../../shared/patient-modal';
 
 
 
@@ -33,9 +33,16 @@ import { take } from 'rxjs';
 export class PatientDetailsCard  {
   patientId = input.required<number>();
 
+  patientData = signal<PatientDto | null>(null);
+
   private userService = inject(UserService);
 
-  patientData = this.userService.patientData;
+  constructor() {
+    effect(() => {
+      this.patientData.set(this.userService.selectedPatient());
+    });
+  }
+
 
 
   personalInfo = computed<LabeledTextInput>(() => ({

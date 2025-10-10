@@ -21,8 +21,6 @@ import {
   providedIn: 'root'
 })
 export class UserService {
-  patientData =  signal<PatientDto | null>(null);
-
   private readonly url = "http://localhost:3000";
 
   private httpClient = inject(HttpClient);
@@ -40,7 +38,6 @@ export class UserService {
     this.getPatientData(patientId).pipe(take(1)).subscribe({
       next: p => {
         this.selectedPatient.set(p);
-        this.patientData.set(p);
       },
     });
   }
@@ -48,11 +45,8 @@ export class UserService {
   getPatientData(id: number): Observable<PatientDto> {
     return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`)
     .pipe(
-      // tap((res) => {
-      //   this.patientData.set(res);
-      //   this.selectedPatient.set(res);
-      // }),
-      catchError(this.handleError));
+      catchError(this.handleError)
+    );
   }
 
   getPatientsDto(): Observable<PatientDto[]> {
@@ -60,14 +54,7 @@ export class UserService {
   }
 
   putPatient(id: number, updatedPatient: PatientDto): Observable<PatientDto> {
-    return this.httpClient.put<PatientDto>(`${this.url}/patients/${id}`, updatedPatient)
-    .pipe(
-      tap((res) => {
-        this.patientData.set(res);
-        this.selectedPatient.set(res);
-      }
-    )
-  )
+    return this.httpClient.put<PatientDto>(`${this.url}/patients/${id}`, updatedPatient);
   }
 
   getGenders(): Observable<GenderDto[]> {
